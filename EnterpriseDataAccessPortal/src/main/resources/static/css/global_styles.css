@@ -1,0 +1,103 @@
+:root {
+    /* ---------- Color Variables ---------- */
+    /* --background-color variations */
+    --background-color-100: #cfa3a3;     /* Gradient top: soft rose pink */
+    --background-color-80: rgba(207, 163, 163, 0.8);
+    --background-color-60: rgba(207, 163, 163, 0.6);
+    --background-color-40: rgba(207, 163, 163, 0.4);
+    --background-color-20: rgba(207, 163, 163, 0.2);
+
+    /* --alt-background-color variations */
+    --alt-background-color-100: rgba(59, 45, 27, 1); /* Rich walnut wood */
+    --alt-background-color-80: rgba(59, 45, 27, 0.8);
+    --alt-background-color-60: rgba(59, 45, 27, 0.6);
+    --alt-background-color-40: rgba(59, 45, 27, 0.4);
+    --alt-background-color-20: rgba(59, 45, 27, 0.2);
+
+    /* --replacement-background-color variations */
+    --replacement-background-color-100: #3a494b; /* Gradient bottom: muted teal gray */
+    --replacement-background-color-80: rgba(58, 73, 75, 0.8);
+    --replacement-background-color-60: rgba(58, 73, 75, 0.6);
+    --replacement-background-color-40: rgba(58, 73, 75, 0.4);
+    --replacement-background-color-20: rgba(58, 73, 75, 0.2);
+
+    /* --primary-color variations */
+    --primary-color-100: #c72b2b;         /* Warm spicy red (from second swatch) */
+    --primary-color-80: rgba(199, 43, 43, 0.8);
+    --primary-color-60: rgba(199, 43, 43, 0.6);
+    --primary-color-40: rgba(199, 43, 43, 0.4);
+    --primary-color-20: rgba(199, 43, 43, 0.2);
+
+    /* --logo-color variations -- */
+    --logo-color-100: #8a2323;   /* Bold deep red (from first swatch) */
+    --logo-color-80: rgba(138, 35, 35, 0.8);
+    --logo-color-60: rgba(138, 35, 35, 0.6);
+    --logo-color-40: rgba(138, 35, 35, 0.4);
+    --logo-color-20: rgba(138, 35, 35, 0.2);
+
+    /* --secondary-color variations */
+    --secondary-color-100: rgba(243, 148, 40, 1);     /* Golden tamarind/orange */
+    --secondary-color-80: rgba(243, 148, 40, 0.8);
+    --secondary-color-60: rgba(243, 148, 40, 0.6);
+    --secondary-color-40: rgba(243, 148, 40, 0.4);
+    --secondary-color-20: rgba(243, 148, 40, 0.2);
+
+    /* --highlight-color variations */
+    --highlight-color-100: rgba(250, 221, 164, 1);    /* Toasted corn/beige */
+    --highlight-color-80: rgba(250, 221, 164, 0.8);
+    --highlight-color-60: rgba(250, 221, 164, 0.6);
+    --highlight-color-40: rgba(250, 221, 164, 0.4);
+    --highlight-color-20: rgba(250, 221, 164, 0.2);
+
+    /* --accent-color variations */
+    --accent-color-100: rgba(92, 169, 122, 1);        /* Herb green / cilantro */
+    --accent-color-80: rgba(92, 169, 122, 0.8);
+    --accent-color-60: rgba(92, 169, 122, 0.6);
+    --accent-color-40: rgba(92, 169, 122, 0.4);
+    --accent-color-20: rgba(92, 169, 122, 0.2);
+
+    /* --text-color-white variations */
+    --text-color-white-100: rgba(255, 248, 240, 1);   /* Warm white */
+    --text-color-white-80: rgba(255, 248, 240, 0.8);
+    --text-color-white-60: rgba(255, 248, 240, 0.6);
+    --text-color-white-40: rgba(255, 248, 240, 0.4);
+    --text-color-white-20: rgba(255, 248, 240, 0.2);
+
+    /* --subtext-color-gray variations */
+    --subtext-color-gray-100: rgba(168, 154, 135, 1); /* Earthy light brown */
+    --subtext-color-gray-80: rgba(168, 154, 135, 0.8);
+    --subtext-color-gray-60: rgba(168, 154, 135, 0.6);
+    --subtext-color-gray-40: rgba(168, 154, 135, 0.4);
+    --subtext-color-gray-20: rgba(168, 154, 135, 0.2);
+
+    /* Font Size */
+    --font-size-s: 0.9rem;
+    --font-size-n: 1rem;
+    --font-size-m: 1.12rem;
+    --font-size-l: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.3rem;
+
+    /*Font Weight */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Border Radius */
+    --border-radius-s: 8px; 
+    --border-radius-m: 15px;
+    --border-radius-l: 30px;
+    --border-radius-circle: 50%;
+
+    /* Site Max Width */
+    --site-max-width: 1300px;
+}
+/* :root contains variables that will be used throughout the entire projects css, if needs to be changed, consider this heavily. 
+The variables have been organized for color in incrememts of 20% opacity changes. Font sizes are generalized and can usually
+be added to or modified without significant project damage.*/
+
+html, body {
+    height: 100%;
+    margin: 0;
+}

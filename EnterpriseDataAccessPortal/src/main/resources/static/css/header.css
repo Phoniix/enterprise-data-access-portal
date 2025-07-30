@@ -1,0 +1,89 @@
+/* ----------------------------- Global Variables That Can be Used Across CSS Files ----------------------------- */
+/* ----------------------------- Colors, Font Weights, Border Radius, and Site Max Width Variables --------------
+
+    --background-color-100
+    --background-color-80
+    --background-color-60
+    --background-color-40
+    --background-color-20
+
+    --alt-background-color-100
+    --alt-background-color-80
+    --alt-background-color-60
+    --alt-background-color-40
+    --alt-background-color-20
+
+    --replacement-background-color-100
+    --replacement-background-color-80
+    --replacement-background-color-60
+    --replacement-background-color-40
+    --replacement-background-color-20
+
+    --primary-color-100
+    --primary-color-80
+    --primary-color-60
+    --primary-color-40
+    --primary-color-20
+
+    --logo-color-100
+    --logo-color-80
+    --logo-color-60
+    --logo-color-40
+    --logo-color-20
+
+    --secondary-color-100
+    --secondary-color-80
+    --secondary-color-60
+    --secondary-color-40
+    --secondary-color-20
+
+    --highlight-color-100
+    --highlight-color-80
+    --highlight-color-60
+    --highlight-color-40
+    --highlight-color-20
+
+    --accent-color-100
+    --accent-color-80
+    --accent-color-60
+    --accent-color-40
+    --accent-color-20
+
+    --text-color-white-100
+    --text-color-white-80
+    --text-color-white-60
+    --text-color-white-40
+    --text-color-white-20
+
+    --subtext-color-gray-100
+    --subtext-color-gray-80
+    --subtext-color-gray-60
+    --subtext-color-gray-40
+    --subtext-color-gray-20
+
+    --font-weight-normal
+    --font-weight-medium
+    --font-weight-semibold
+    --font-weight-bold
+
+    --border-radius-s
+    --border-radius-m
+    --border-radius-l
+    --border-radius-circle
+
+    --site-max-width
+*/
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 130px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    backdrop-filter: blur(10px);
+}
