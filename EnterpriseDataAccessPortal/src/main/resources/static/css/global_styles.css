@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans+TC:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 :root {
     /* ---------- Color Variables ---------- */
     /* --background-color variations */
@@ -22,25 +23,25 @@
     --replacement-background-color-20: rgba(58, 73, 75, 0.2);
 
     /* --primary-color variations */
-    --primary-color-100: #c72b2b;         /* Warm spicy red (from second swatch) */
-    --primary-color-80: rgba(199, 43, 43, 0.8);
-    --primary-color-60: rgba(199, 43, 43, 0.6);
-    --primary-color-40: rgba(199, 43, 43, 0.4);
-    --primary-color-20: rgba(199, 43, 43, 0.2);
+    --primary-color-100: #496DA7;         /* Brand blue */
+    --primary-color-80: rgba(73, 109, 167, 0.8);
+    --primary-color-60: rgba(73, 109, 167, 0.6);
+    --primary-color-40: rgba(73, 109, 167, 0.4);
+    --primary-color-20: rgba(73, 109, 167, 0.2);
 
     /* --logo-color variations -- */
-    --logo-color-100: #8a2323;   /* Bold deep red (from first swatch) */
-    --logo-color-80: rgba(138, 35, 35, 0.8);
-    --logo-color-60: rgba(138, 35, 35, 0.6);
-    --logo-color-40: rgba(138, 35, 35, 0.4);
-    --logo-color-20: rgba(138, 35, 35, 0.2);
+    --logo-color-100: #FBB019;   /* Brand yellow */
+    --logo-color-80: rgba(251, 176, 25, 0.8);
+    --logo-color-60: rgba(251, 176, 25, 0.6);
+    --logo-color-40: rgba(251, 176, 25, 0.4);
+    --logo-color-20: rgba(251, 176, 25, 0.2);
 
     /* --secondary-color variations */
-    --secondary-color-100: rgba(243, 148, 40, 1);     /* Golden tamarind/orange */
-    --secondary-color-80: rgba(243, 148, 40, 0.8);
-    --secondary-color-60: rgba(243, 148, 40, 0.6);
-    --secondary-color-40: rgba(243, 148, 40, 0.4);
-    --secondary-color-20: rgba(243, 148, 40, 0.2);
+    --secondary-color-100: #2D2D2D;     /* Brand dark gray */
+    --secondary-color-80: rgba(45, 45, 45, 0.8);
+    --secondary-color-60: rgba(45, 45, 45, 0.6);
+    --secondary-color-40: rgba(45, 45, 45, 0.4);
+    --secondary-color-20: rgba(45, 45, 45, 0.2);
 
     /* --highlight-color variations */
     --highlight-color-100: rgba(250, 221, 164, 1);    /* Toasted corn/beige */
@@ -90,8 +91,9 @@
     --border-radius-l: 30px;
     --border-radius-circle: 50%;
 
-    /* Site Max Width */
-    --site-max-width: 1300px;
+    /* Site Width */
+    --site-min-width: 1024px;
+    --site-max-width: 1600px;
 }
 /* :root contains variables that will be used throughout the entire projects css, if needs to be changed, consider this heavily. 
 The variables have been organized for color in incrememts of 20% opacity changes. Font sizes are generalized and can usually
@@ -100,4 +102,8 @@ be added to or modified without significant project damage.*/
 html, body {
     height: 100%;
     margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', 'Noto Sans TC', 'Rubik', sans-serif;
+    background: linear-gradient(160deg, var(--background-color-100) 0%, var(--replacement-background-color-100) 100%);
+    background-attachment: fixed;
 }
