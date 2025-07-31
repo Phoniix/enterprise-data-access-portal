@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    <h1>Dashboard</h1>
+    <p id="user-email"></p>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBh4BFKdvlBB8zanunGXVWYo7Azvy47RsI",
+      authDomain: "devops-auth-demo.firebaseapp.com",
+      projectId: "devops-auth-demo",
+      storageBucket: "devops-auth-demo.appspot.com",
+      messagingSenderId: "684737269225",
+      appId: "1:684737269225:web:c9b4cb838d5cabf5884f78",
+      measurementId: "G-KTLQDZDZD3"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        document.getElementById("user-email").innerText = user.email;
+      } else {
+        window.location.href = "index.html";
+      }
+    });
+
+    function logout() {
+      auth.signOut().then(() => {
+        window.location.href = "index.html";
+      });
+    }
+  </script>
+</body>
+</html>
