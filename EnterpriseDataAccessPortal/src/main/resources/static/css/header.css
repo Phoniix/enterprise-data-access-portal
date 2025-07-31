@@ -88,7 +88,7 @@ header {
 } 
 
 .header-content {
-    max-width: var(--site-max-width);
+    max-width: 95vw;    
     margin: 0 auto;
     width: 100%;
     display: flex;
@@ -105,7 +105,6 @@ header {
     padding: 10px;
     border-radius: var(--font-size-m);
     border: 2px solid transparent; /* Default border */
-    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     backdrop-filter: blur(3px);
     transition: all 0.3s ease;
     border-radius: var(--border-radius-s);
@@ -124,14 +123,58 @@ header {
     border: 2px solid var(--primary-color-60); /* Border color on hover */
     background-color: var(--replacement-background-color-20); /* Background color on hover */
 }
+
+/* Search bar styles */
+.header-search {
+    display: inline-block;
+    align-items: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: 20px; /* Adds space between search bar and logo */
+    width: 300px; /* Fixed width for search bar */
+}
+
+.header-search input {
+    padding: 12px 10px;
+    font-size: var(--font-size-s);
+    width: 250px;
+    border-radius: var(--border-radius-l);
+    border: 2px solid var(--primary-color-100);
+}
+
+.search-placeholder {
+    font-weight: var(--font-weight-bold);
+    position: absolute;
+    left: 20px;
+    top: 53%;
+    transform: translateY(-50%);
+    color: var(--subtext-color-gray-60);
+    pointer-events: none; /* Allows clicks to pass through */
+    font-size: var(--font-size-s);
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.search-placeholder .icon {
+    margin-right: 5px;
+    font-size: calc(var(--font-size-s) + 1.7rem); /* Adjust icon size */
+    transform: scaleX(-1);
+}
+
+.icon {
+    position: relative;
+    top: -3px;
+    left: -10px;
+}
  
 
 /* Navigation links */
 header nav a {
     font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-m);
+    font-size: var(--font-size-s);
     text-decoration: none;
-    padding: 18px 36px; /* Added horizontal spacing for better button shape */
+    padding: 12px 24px; /* Added horizontal spacing for better button shape */
     color: var(--primary-color-100);
     border: 2px solid transparent; /* Default border */
     border-radius: var(--border-radius-l);
