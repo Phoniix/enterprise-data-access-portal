@@ -139,7 +139,7 @@ header {
     font-size: var(--font-size-s);
     width: 250px;
     border-radius: var(--border-radius-l);
-    border: 2px solid var(--primary-color-100);
+    border: 5px solid var(--primary-color-100);
 }
 
 .search-placeholder {
@@ -167,6 +167,10 @@ header {
     top: -3px;
     left: -10px;
 }
+
+.header-search input:focus + .search-placeholder {
+  display: none;
+}
  
 
 /* Navigation links */
@@ -190,8 +194,4 @@ header nav a:hover {
     color: var(--primary-color-100);
     border: 2px solid var(--primary-color-60); /* Border color on hover */
     transform: scale(1.05); /* Slightly enlarge on hover */
-}
-
-.landing-page {
-    margin-top: 120px;
 }
