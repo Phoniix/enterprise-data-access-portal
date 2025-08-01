@@ -95,6 +95,7 @@
     --site-min-width: 1024px;
     --site-max-width: 1600px;
     --header-height: 50px;
+    --site-sides-margin: 30px;
 }
 /* :root contains variables that will be used throughout the entire projects css, if needs to be changed, consider this heavily. 
 The variables have been organized for color in incrememts of 20% opacity changes. Font sizes are generalized and can usually
@@ -102,9 +103,14 @@ be added to or modified without significant project damage.*/
 
 html, body {
     height: 100%;
-    margin: var(--header-height) 0 0 0;
+    margin: var(--header-height) 0 var(--site-sides-margin) var(--site-sides-margin);
     box-sizing: border-box;
     font-family: 'Josefin Sans', 'Noto Sans TC', 'Rubik', sans-serif;
     background: linear-gradient(160deg, var(--background-color-100) 0%, var(--replacement-background-color-100) 100%);
     background-attachment: fixed;
+}
+
+/* .hidden is used for hiding sections that are still on the same page as the link clicked. Used to avoid rerouting to multiple .html files. */
+.hidden {
+    display: none;
 }
