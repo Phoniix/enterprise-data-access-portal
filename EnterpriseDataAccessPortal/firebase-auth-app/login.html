@@ -10,15 +10,20 @@
 </head>
 <body>
   <div class="container">
-    <input type="email" id="email" placeholder="Username" class="input-field" />
-    <input type="password" id="password" placeholder="Password" class="input-field" />
+    <div class="glass-box">
+      <img src="images/MAXX-Energy-Logo-1B.png" alt="Company Logo" class="logo" />
 
-    <button onclick="login()" class="login-button">Login</button>
+      <input type="email" id="email" placeholder="Username" class="input-bubble" />
+      <input type="password" id="password" placeholder="Password" class="input-bubble" />
 
-    <div onclick="resetPassword()" class="forgot-password">
-      Forgot Password?
+      <button onclick="login()" class="login-button">Login</button>
+
+      <div onclick="resetPassword()" class="forgot-password">Forgot Password?</div>
     </div>
   </div>
+
   <script src="app.js"></script>
 </body>
+
 </html>
+
