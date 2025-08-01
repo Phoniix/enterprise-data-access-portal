@@ -35,7 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
       resultsDiv.innerHTML = ""; // Clears any previous search results
       if (data.items && data.items.length > 0) {
         data.items.forEach((item) => {
-          resultsDiv.innerHTML += `<div class="search-result">
+          resultsDiv.innerHTML += 
+                    `<div class="search-result">
                         <a href="${item.link}" target="_blank" rel="noopener noreferrer"><h3>${item.title}</h3></a>
                         <p>${item.snippet}</p>
                     </div>
