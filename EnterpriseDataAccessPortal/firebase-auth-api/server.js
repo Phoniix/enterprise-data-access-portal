@@ -11,8 +11,8 @@ admin.initializeApp({
 });
 
 const db = admin.firestore();
-
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
@@ -20,37 +20,41 @@ app.use(async (req, res, next) => {
   const authHeader = req.headers.authorization;
 
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    return res.status(401).json({ message: "Unauthorized" });
+    return res.status(401).json({ error: "Authorization header missing or malformed" });
   }
 
-  const idToken = authHeader.split(" ")[1];
+  const token = authHeader.split(" ")[1];
 
   try {
-    const decodedToken = await admin.auth().verifyIdToken(idToken);
-    const userRef = db.collection("users").doc(decodedToken.uid);
-    const userDoc = await userRef.get();
+    const decoded = await admin.auth().verifyIdToken(token);
+    const userRef = db.collection("users").doc(decoded.uid);
+    const userSnap = await userRef.get();
 
     req.user = {
-      uid: decodedToken.uid,
-      email: decodedToken.email,
-      role: userDoc.exists ? userDoc.data().role : "guest",
+      uid: decoded.uid,
+      email: decoded.email,
+      role: userSnap.exists ? userSnap.data().role : "guest",
     };
 
     next();
-  } catch (error) {
-    return res.status(403).json({ message: "Invalid token" });
+  } catch (err) {
+    return res.status(403).json({ error: "Invalid or expired token" });
   }
 });
 
-app.get("/api/data", authorize("view_data"), (req, res) => {
-  res.json({ message: "You can view data!" });
+app.get("/", (req, res) => {
+  res.send("Firebase Auth API is running");
 });
 
-app.post("/api/upload", authorize("upload_files"), (req, res) => {
-  res.json({ message: "Upload successful!" });
+app.get("/api/data", authorize("view_data"), (req, res) => {
+  res.json({ message: `Welcome ${req.user.role}! You have access to view data.` });
+});
+
+app.use((err, req, res, next) => {
+  res.status(500).json({ error: "Something went wrong." });
 });
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`API running on http://localhost:${PORT}`);
 });
