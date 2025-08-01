@@ -2,14 +2,16 @@ const rolePermissions = require("../utils/permissions");
 
 function authorize(action) {
   return function (req, res, next) {
-    const role = req.user?.role;
+    const user = req.user;
 
-    if (!role || !rolePermissions[role]) {
-      return res.status(403).json({ message: "Access denied." });
+    if (!user || !user.role) {
+      return res.status(403).json({ error: "Access denied. No user role found." });
     }
 
-    if (!rolePermissions[role].includes(action)) {
-      return res.status(403).json({ message: "Insufficient permissions." });
+    const allowedActions = rolePermissions[user.role];
+
+    if (!allowedActions || !allowedActions.includes(action)) {
+      return res.status(403).json({ error: "Insufficient permissions." });
     }
 
     next();
@@ -17,3 +19,4 @@ function authorize(action) {
 }
 
 module.exports = authorize;
+
