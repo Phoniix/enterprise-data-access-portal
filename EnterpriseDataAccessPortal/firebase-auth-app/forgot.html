@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Forgot Password</title>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: url("images/background-login.jpg") no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Albert Sans', sans-serif;
+    }
+
+    .glass-box {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      width: 200px;
+      margin-bottom: 30px;
+    }
+
+    .bubble-input {
+      width: 300px;
+      height: 55px;
+      padding: 0 20px;
+      font-size: 20px;
+      font-family: 'Albert Sans', sans-serif;
+      font-weight: 700;
+      border: 2px solid #0073b7; /* blue outline */
+      border-radius: 30px;
+      background: white;
+      color: black;
+      outline: none;
+      margin-bottom: 20px;
+    }
+
+    .bubble-input::placeholder {
+      color: rgba(0, 0, 0, 0.4);
+    }
+
+    .login-button {
+      width: 160px;
+      height: 50px;
+      background: #C3C3C3;
+      border-radius: 40px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      margin-bottom: 15px;
+    }
+
+    .back-link {
+      color: #0073b7; /* darker blue */
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="glass-box">
+    <img src="images/MAXX-Energy-Logo-1B.png" alt="Company Logo" class="logo" />
+
+    <input
+      type="email"
+      id="email"
+      placeholder="Enter your email"
+      class="bubble-input"
+    />
+
+    <button onclick="resetPassword()" class="login-button">Send Reset Link</button>
+
+    <a href="login.html" class="back-link">← Back to Login</a>
+  </div>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBh4BFKdvlBB8zanunGXVWYo7Azvy47RsI",
+      authDomain: "devops-auth-demo.firebaseapp.com",
+      projectId: "devops-auth-demo",
+      storageBucket: "devops-auth-demo.appspot.com",
+      messagingSenderId: "684737269225",
+      appId: "1:684737269225:web:c9b4cb838d5cabf5884f78",
+      measurementId: "G-KTLQDZDZD3"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    function resetPassword() {
+      const email = document.getElementById("email").value;
+
+      if (!email) {
+        alert("Please enter your email.");
+        return;
+      }
+
+      auth.sendPasswordResetEmail(email)
+        .then(() => {
+          alert("Password reset email sent!");
+        })
+        .catch((error) => {
+          alert("Error: " + error.message);
+        });
+    }
+  </script>
+</body>
+</html>
+

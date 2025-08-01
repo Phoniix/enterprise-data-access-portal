@@ -1,74 +1,64 @@
 body {
-  background-image: url("images/background-login.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   font-family: 'Albert Sans', sans-serif;
-  margin: 0;
+  background: url("images/background-login.jpg") no-repeat center center fixed;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 0;
 }
 
 .container {
   text-align: center;
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 40px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .logo {
-  width: 120px;
-  margin-bottom: 10px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  width: 180px;
+  margin-bottom: 30px;
 }
 
-.input-bubble {
+.input-field {
+  display: block;
   width: 300px;
   height: 55px;
   padding: 0 20px;
-  margin: 10px 0;
   font-size: 20px;
-  font-family: 'Albert Sans', sans-serif;
   font-weight: 700;
-  border: 2px solid #003366; /* dark blue border */
-  color: #003366;            /* dark blue text */
+  font-family: 'Albert Sans', sans-serif;
+  border: 2px solid #007BFF;
   border-radius: 30px;
-  background: white;
+  margin-bottom: 15px;
   outline: none;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  background: white;
+  color: black;
 }
 
 .login-button {
-  margin-top: 20px;
-  width: 153px;
-  height: 54px;
-  background: #C3C3C3;
-  border-radius: 40px;
-  opacity: 0.60;
-  font-size: 20px;
+  width: 160px;
+  height: 50px;
+  background: #007BFF;
+  color: white;
+  font-size: 18px;
   font-weight: bold;
   border: none;
+  border-radius: 40px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .forgot-password {
+  display: block;
+  margin-top: 12px;
   color: #003366;
+  font-weight: bold;
   font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  margin-top: 10px;
-
+  text-decoration: none;
 }
-.glass-box {
-  backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 24px;
-  padding: 40px;
-  display: inline-block;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-}
-
-

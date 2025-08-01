@@ -1,42 +1,36 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyBh4BFKdvlBB8zanunGXVWYo7Azvy47RsI",
-  authDomain: "devops-auth-demo.firebaseapp.com",
-  projectId: "devops-auth-demo",
-  storageBucket: "devops-auth-demo.appspot.com",
-  messagingSenderId: "684737269225",
-  appId: "1:684737269225:web:c9b4cb838d5cabf5884f78",
-  measurementId: "G-KTLQDZDZD3"
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_MSG_ID",
+  appId: "YOUR_APP_ID",
+  measurementId: "YOUR_MEASUREMENT_ID"
 };
 
 firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
 
 function login() {
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
 
-  auth.signInWithEmailAndPassword(email, password)
-    .then(() => {
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(userCredential => userCredential.user.getIdToken())
+    .then(token => {
+      return fetch("http://localhost:3000/api/data", {
+        method: "GET",
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }
+      });
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log("API response:", data);
       window.location.href = "dashboard.html";
     })
-    .catch((error) => {
-      alert(error.message);
-    });
-}
-
-function resetPassword() {
-  const email = document.getElementById("email").value;
-
-  if (!email) {
-    alert("Please enter your email to reset your password.");
-    return;
-  }
-
-  auth.sendPasswordResetEmail(email)
-    .then(() => {
-      alert("Password reset email sent.");
-    })
-    .catch((error) => {
-      alert(error.message);
+    .catch(error => {
+      console.error("Login/API Error:", error);
+      alert("Login failed or unauthorized.");
     });
 }

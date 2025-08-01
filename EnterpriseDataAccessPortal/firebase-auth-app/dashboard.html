@@ -6,11 +6,29 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
   <div class="dashboard-container">
     <h1>Dashboard</h1>
     <p id="user-email"></p>
+
+    <!-- Role-Based Panels -->
+    <div id="admin-panel" style="display: none;">
+      <h2>Admin Panel</h2>
+      <p>Access to admin tools and settings.</p>
+    </div>
+
+    <div id="user-panel" style="display: none;">
+      <h2>User Panel</h2>
+      <p>Standard user access.</p>
+    </div>
+
+    <div id="guest-panel" style="display: none;">
+      <h2>Guest Panel</h2>
+      <p>Limited guest access.</p>
+    </div>
+
     <button onclick="logout()">Logout</button>
   </div>
 
@@ -27,20 +45,39 @@
 
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
+    const db = firebase.firestore();
 
-    auth.onAuthStateChanged(user => {
+    auth.onAuthStateChanged(async user => {
       if (user) {
         document.getElementById("user-email").innerText = user.email;
+
+        const uid = user.uid;
+        const doc = await db.collection("users").doc(uid).get();
+
+        if (doc.exists) {
+          const role = doc.data().role;
+
+          if (role === "admin") {
+            document.getElementById("admin-panel").style.display = "block";
+          } else if (role === "user") {
+            document.getElementById("user-panel").style.display = "block";
+          } else if (role === "guest") {
+            document.getElementById("guest-panel").style.display = "block";
+          }
+        } else {
+          alert("No role assigned. Access denied.");
+          auth.signOut();
+        }
       } else {
-        window.location.href = "index.html";
+        window.location.href = "login.html";
       }
     });
 
     function logout() {
       auth.signOut().then(() => {
-        window.location.href = "index.html";
+        window.location.href = "login.html";
       });
     }
   </script>
 </body>
-</html>
+</
