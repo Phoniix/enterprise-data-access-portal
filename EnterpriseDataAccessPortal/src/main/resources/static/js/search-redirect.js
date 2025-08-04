@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault(); // prevent default form reload
       const query = input.value.trim();
       if (query) {
-        window.location.href = `/templates/searchResults.html?q=${encodeURIComponent(query)}`;
+        window.location.href = `pages/searchResults.html?q=${encodeURIComponent(query)}`;
       }
     });
   }

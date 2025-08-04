@@ -10,7 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         const target = document.querySelector(hash);
-        if(target) target.classList.remove('hidden');
+        if(target) {
+            target.classList.remove('hidden');
+            requestAnimationFrame(() => {
+                window.scrollTo(0, 0);
+            });
+        }
     }
 
     // Click Navigation MGMT

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const headerTarget = document.getElementById('header-placeholder');
   if (headerTarget) {
-    fetch('/templates/header.html')
+    fetch('/fragments/header.html')
       .then(res => res.text())
       .then(html => {
         headerTarget.innerHTML = html;
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const query = document.getElementById('search-input').value.trim();
             if (query) {
-              window.location.href = `../templates/searchResults.html?q=${encodeURIComponent(query)}`;
+              window.location.href = `pages/searchResults.html?q=${encodeURIComponent(query)}`;
             }
           });
         }
