@@ -1,0 +1,36 @@
+.search-result {
+  background-color: var(--text-color-white-20, #fff); /* use a var if you have one */
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.search-result:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.search-result a h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+  color: var(--primary-color, #2a2a2a);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.search-result a:hover h3 {
+  color: var(--accent-color, #b30000); /* or whatever your brand highlight is */
+  text-decoration: underline;
+}
+
+.search-result a {
+    text-decoration: none;
+}
+
+.search-result p {
+  margin: 0;
+  color: var(--subtext-color, #555);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}

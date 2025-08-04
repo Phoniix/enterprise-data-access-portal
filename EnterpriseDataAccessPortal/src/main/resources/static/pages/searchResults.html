@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Search Results</title>
-  <link rel="stylesheet" href="../css/global_styles.css"/>
-  <link rel="stylesheet" href="../css/search_results.css"/>
-  <link rel="stylesheet" href="../css/header.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Search Results</title>
+    <link rel="stylesheet" href="../css/global_styles.css" />
+    <link rel="stylesheet" href="../css/search_results.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+    <!-- Dynamic Header Call -->
 
-    <div id="header-placeholder"></div> <!-- Dynamic Header Call -->
-  
-  <main>
-    <h1>Search Results matching: "<span id="search-query-text"></span>"</h1>
-    <div id="search-results"></div>
-  </main>
+    <!--                                        Dynamic Header call, this is coming from js                    
+      <div class="search-result">
+          <a href="${item.link}" target="_blank" rel="noopener noreferrer"><h3>${item.title}</h3></a>
+          <p>${item.snippet}</p>
+      </div>
+    -->
 
+    <main>
+      <h1>Search Results matching: "<span id="search-query-text"></span>"</h1>
+      <div id="search-results"></div>
+    </main>
 
-  <script src="../js/search-results.js"></script>
-  <script src="../js/header-scripts.js"></script>
-</body>
+    <script src="../js/search-results.js"></script>
+    <script src="../js/header-scripts.js"></script>
+  </body>
 </html>
