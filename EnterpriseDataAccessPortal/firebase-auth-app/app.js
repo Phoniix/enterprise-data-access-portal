@@ -1,3 +1,4 @@
+// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBh4BFKdvlBB8zanunGXVWYo7Azvy47RsI",
   authDomain: "devops-auth-demo.firebaseapp.com",
@@ -10,6 +11,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+// Login function
 function login() {
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
@@ -20,31 +22,37 @@ function login() {
     })
     .catch(error => {
       console.error("Login Error:", error);
-      alert("Login failed: " + error.message);
+      alert("Unable to sign in. Please check your email and password and try again.");
     });
 }
 
+// Password reset
 function resetPassword() {
   const email = document.getElementById("email").value.trim();
 
   if (!email) {
-    alert("Please enter your email address.");
+    alert("Please enter your email address to receive a password reset link.");
     return;
   }
 
   firebase.auth().sendPasswordResetEmail(email)
     .then(() => {
-      alert("Password reset email sent.");
+      alert("A password reset email has been sent. Please check your inbox.");
     })
     .catch(error => {
       console.error("Password Reset Error:", error);
-      alert("Error: " + error.message);
+      alert("We couldn't send the reset email. Please make sure the address is correct or try again later.");
     });
 }
 
+// Logout
 function logout() {
-  firebase.auth().signOut().then(() => {
-    window.location.href = "index.html";
-  });
+  firebase.auth().signOut()
+    .then(() => {
+      window.location.href = "login.html";
+    })
+    .catch(error => {
+      console.error("Logout Error:", error);
+      alert("We encountered a problem while signing out. Please try again.");
+    });
 }
-
