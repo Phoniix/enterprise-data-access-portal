@@ -1,4 +1,3 @@
-// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyBh4BFKdvlBB8zanunGXVWYo7Azvy47RsI",
   authDomain: "devops-auth-demo.firebaseapp.com",
@@ -11,7 +10,6 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-// Login function
 function login() {
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
@@ -26,7 +24,6 @@ function login() {
     });
 }
 
-// Password reset
 function resetPassword() {
   const email = document.getElementById("email").value.trim();
 
@@ -45,9 +42,9 @@ function resetPassword() {
     });
 }
 
-// Logout
 function logout() {
   firebase.auth().signOut().then(() => {
     window.location.href = "index.html";
   });
 }
+
