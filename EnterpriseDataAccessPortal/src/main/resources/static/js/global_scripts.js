@@ -1,3 +1,5 @@
+window.isIndex = window.location.pathname.includes("index");
+
 
 // Show/Hide Sections (Single Page Application [SPA] Funtionality)
 document.addEventListener('DOMContentLoaded', () => {
@@ -22,6 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
+            
+            // Highlights on 'active' or click
+            navLinks.forEach (nav => nav.classList.remove ('active')); 
+            link.classList.add('active');
+
             const hash = link.getAttribute('href');
             history.pushState(null, '', hash); // update URL live. No reload necesary.
             showSectionByHash(hash);

@@ -87,6 +87,12 @@ header {
     background: none;
 } 
 
+.nav-link.active {
+  border-bottom: 2px solid var(--highlight-color); /* Or any style you want */
+  font-weight: bold;
+  color: var(--text-color); /* Customize this */
+}
+
 .header-content {
     max-width: 95vw;    
     margin: 0 auto;

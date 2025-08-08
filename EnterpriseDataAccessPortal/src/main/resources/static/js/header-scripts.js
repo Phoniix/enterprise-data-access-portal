@@ -1,11 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   const headerTarget = document.getElementById('header-placeholder');
-  const filePath = 'fragments/header.html';
-  const isIndex = window.location.pathname.includes('index.html');
-  if(!isIndex) filePath = '../fragments/header.html';
+  let headerFilePath = 'fragments/header.html';
+  if(!isIndex) headerFilePath = '../fragments/header.html';
 
   if (headerTarget) {
-    fetch(filePath)
+    fetch(headerFilePath)
       .then(res => res.text())
       .then(html => {
         headerTarget.innerHTML = html;
