@@ -1,0 +1,64 @@
+body {
+  font-family: 'Albert Sans', sans-serif;
+  background: url("images/background-login.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 40px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 180px;
+  margin-bottom: 30px;
+}
+
+.input-field {
+  display: block;
+  width: 300px;
+  height: 55px;
+  padding: 0 20px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Albert Sans', sans-serif;
+  border: 2px solid #007BFF;
+  border-radius: 30px;
+  margin-bottom: 15px;
+  outline: none;
+  background: white;
+  color: black;
+}
+
+.login-button {
+  width: 160px;
+  height: 50px;
+  background: #007BFF;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.forgot-password {
+  display: block;
+  margin-top: 12px;
+  color: #003366;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+}
