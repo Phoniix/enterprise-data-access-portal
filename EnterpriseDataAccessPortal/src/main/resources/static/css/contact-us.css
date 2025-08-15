@@ -1,0 +1,60 @@
+.contact-form {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--color-bg-secondary, #f9f9f9);
+  border-radius: var(--radius-md, 12px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-family: var(--font-body, 'Segoe UI', sans-serif);
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-text, #333);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm, 8px);
+  border: 1px solid var(--color-border, #ccc);
+  font-size: 1rem;
+  background-color: #fff;
+  color: var(--color-text, #333);
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background-color: var(--color-primary, #800000);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm, 8px);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: var(--color-primary-hover, #a00000);
+}
+
+.contact-form .form-status {
+  margin-top: 1rem;
+  font-weight: 500;
+  color: var(--color-accent, green);
+}
+
+.contact-form .form-status.hidden {
+  display: none;
+}

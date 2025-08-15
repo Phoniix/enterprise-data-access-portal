@@ -4,11 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Login</title>
+  <link rel="stylesheet" href="../css/global_styles.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
   <link rel="stylesheet" href="style.css" />
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 </head>
 <body>
+  <header>
+    <div id="header-placeholder"></div>
+  </header>
   <div class="container">
     <img src="images/MAXX-Energy-Logo-1B.png" alt="Company Logo" class="logo" />
     <input type="email" id="email" placeholder="Username" class="input-field" />
@@ -16,6 +22,12 @@
     <button onclick="login()" class="login-button">Login</button>
     <a href="forgot.html" class="forgot-password">Forgot Password?</a>
   </div>
+
+  <footer>
+    <div id="footer-placeholder"></div>
+  </footer>
   <script src="app.js"></script>
+  <script src="../js/header-scripts.js"></script>
+  <script src="../js/footer-scripts.js"></script>
 </body>
 </html>
