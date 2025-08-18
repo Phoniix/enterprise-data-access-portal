@@ -1,0 +1,47 @@
+/* style.css */
+
+/* Make sure the whole page uses column layout */
+/* html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+} */
+
+/* Push footer to bottom naturally */
+section {
+  flex: 1; /* fills available space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Center the login box */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* spacing between elements */
+  background: var(--text-color-white-20);
+  margin-top: 75px;
+  padding: 2rem 6rem;
+  border-radius: var(--border-radius-l);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Optional: adjust logo size */
+.logo {
+  max-width: 200px;
+  margin-bottom: 1rem;
+}
+
+/* Input & button styling */
+.input-field, .login-button {
+  width: 250px;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.login-button {
+  cursor: pointer;
+}

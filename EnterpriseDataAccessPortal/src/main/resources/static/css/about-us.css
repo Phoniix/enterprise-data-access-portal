@@ -1,6 +1,5 @@
 
 .about-content {
-    background: linear-gradient(120deg, #cfa3a3 0%, #3a494b 100%);
     border-radius: 30px;
     box-shadow: 0 8px 32px rgba(45,45,45,0.4);
     padding: 56px 40px;
@@ -9,7 +8,7 @@
     color: #fff8f0;
     font-family: 'Josefin Sans', 'Noto Sans TC', 'Rubik', sans-serif;
     letter-spacing: 0.02em;
-    border: 2px solid rgba(251,176,25,0.4);
+    border: 2px solid var(--primary-color-100)
 }
 
 .about-content .container {
@@ -22,12 +21,11 @@
 .about-content h2 {
     font-size: 2rem;
     font-weight: 700;
-    color: #FBB019;
+    color: var(--primary-color-100);
     margin-top: 0;
     margin-bottom: 18px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    text-shadow: 0 2px 8px rgba(251,176,25,0.4);
     position: relative;
     padding-bottom: 12px;
 }

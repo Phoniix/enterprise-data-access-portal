@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="css/about-us.css" />
     <!-- FAQ Stylesheet Ref -->
     <link rel="stylesheet" href="css/faq.css" />
+    <!-- Contact Us Stylesheet Ref -->
+     <link rel="stylesheet" href="css/contact-us.css">
     <!-- Footer Stylesheet Ref -->
     <link rel="stylesheet" href="css/footer.css" />
     <body>
@@ -48,7 +50,7 @@
           </div>
           <div class="home-content">
             <!-- Home Welcome Panel-->
-            
+
             <div id="panel-welcome">
               <div class="image-holder">
                 <img
@@ -76,7 +78,7 @@
             </div>
 
             <!-- Home Panel 2 -->
-            
+
             <div class="panel-2">
               <div class="image-holder">
                 <img
@@ -147,8 +149,8 @@
         </section>
 
         <section id="faq" class="spa-section">
-          <h1>
-            <i class="fas fa-question-circle"></i> Frequently Asked Questions
+          <h1 class="title">
+            <span><i class="fas fa-question-circle"></i></span> Frequently Asked Questions
           </h1>
 
           <div class="faq-item">
@@ -196,8 +198,35 @@
           </div>
         </section>
 
-        <!-- Contact Us Section -->
-        <section class="contact-us"></section>
+        <!---------------------------------------------------------------- Contact Us Section ----------------------------------------------------------------------->
+        <section id="contact-us" class="spa-section">
+          <h2>Contact Us</h2>
+          <p>Have questions or need support? Reach out below:</p>
+
+          <form id="contact-form" action="#" method="POST">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
+        </section>
       </main>
       <!-- End Content Section ------------------------------------------------------------------------------------------------->
 
