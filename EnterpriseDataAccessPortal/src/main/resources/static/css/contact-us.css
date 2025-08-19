@@ -1,223 +1,53 @@
-/* ------------------------- Home Section ------------------------ */
-#home {
-    --home-panels-min-height: 200px;
-    --panel-img-width: 55%;
-  }
-  
-  
-  .home-content {
-    display: flex;
-    flex-direction: column;
-    max-width: var(--max-site-width, 1300px);
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  
-  /* ------------------------- Panel Titles ------------------------ */
-  #home > h1,
-  .panel-title {
-    font-size: var(--font-size-xl, 2rem);
-    font-weight: var(--font-weight-bold, 700);
-    margin: 20px 0 10px;
-    text-align: left;
-  }
-  
-  
-  /* ------------------------- Shared Panel Styles ------------------------ */
-  #panel-welcome,
-  .panel-2 {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 40px;
-    padding: 40px;
-    background: var(--text-color-white-20, #ffffff);
-    border-radius: var(--border-radius-xl, 12px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    min-height: var(--home-panels-min-height);
-  }
-  
-  
-  /* ------------------------- Image Holder ------------------------ */
-  #panel-welcome .image-holder,
-  .panel-2 .image-holder {
-    flex: 0 0 var(--panel-img-width);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  
-  #panel-welcome .image-holder img,
-  .panel-2 .image-holder img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-    display: block;
-  }
-  
-  
-  /* ------------------------- Text Panel ------------------------ */
-  #panel-welcome .text-panel,
-  .panel-2 .text-panel {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  
-  .desc {
-    font-size: var(--font-size-base, 1rem);
-    color: var(--text-color-80, #444);
-    line-height: 1.6;
-  }
-  
-  
-  /* ------------------------- Auth Links ------------------------ */
-  .auth-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: auto;
-    gap: 6px;
-  }
-  
-  
-  .sign-in {
-    text-decoration: none;
-    font-weight: 600;
-    padding: 10px 16px;
-    border-radius: var(--border-radius, 8px);
-    background-color: var(--logo-color-40, #FBB019);
-    color: white;
-    transition: background-color 0.2s ease;
-  }
-  
-  
-  .register {
-    text-decoration: none;
-    color: var(--primary-color-100, #496DA7);
-    font-size: 0.95rem;
-    font-weight: 500;
-    background: none;
-    padding: 0;
-    margin-top: 10px;
-  }
-  
-  
-  .sign-in:hover {
-    background-color: var(--logo-color-100, #FBB019);
-  }
-  
-  
-  .register:hover {
-    text-decoration: underline;
-    color: var(--accent-color, #a00);
-  }
-  
-  
-  /* ------------------------- Responsive ------------------------ */
-  
-  
-  /* Comented out for inital testing. do not delte 
-  @media (max-width: 768px) {
-    #panel-welcome,
-    .panel-2 {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-  
-    #home > h1,
-    .panel-title {
-      text-align: center;
-    }
-  
-  
-    .auth-links {
-      align-items: center;
-    }
-  
-  
-    .image-holder img {
-      max-width: 100%;
-    }
-  
-  
-    .text-panel {
-      align-items: center;
-    }
-  
-  
-    .desc {
-      text-align: center;
-    }
-  }
-  
-  
-  */
-/* style.css */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
-}
-.top-contact {
-  background: #f5a800;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-}
-
-.contact-info {
-  padding: 1rem;
-  background: #efefef;
-  text-align: center;
-}
-.contact-form {
-  max-width: 600px;
+#contact-us {
+  max-width: 700px;
   margin: 2rem auto;
-  padding: 0 1rem;
-}
-.contact-form h2 {
-  margin-bottom: 1rem;
-}
-.field-group {
-  margin-bottom: 1rem;
-}
-.field-group label {
-  display: block;
-}
-.field-group input,
-.field-group select,
-.field-group textarea {
-  width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.3rem;
-  box-sizing: border-box;
-}
-button {
-  background: #007bff;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  cursor: pointer;
-}
-button:hover {
-  background: #0056b3;
-}
-.careers-callout {
-  background: #eef6fb;
-  text-align: center;
-  padding: 2rem 1rem;
-}
-.careers-callout h2 {
-  margin-bottom: 0.5rem;
+  padding: 1.5rem;
+  background-color: var(--text-color-white-20);
+  border-radius: var(--border-radius-m);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
+#contact-us h2 {
+  margin-bottom: 1rem;
+  color: var(--logo-color-100);
+}
+
+#contact-us .form-group {
+  margin-bottom: 1rem;
+}
+
+#contact-us label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: var(--font-weight-medium);
+}
+
+#contact-us input,
+#contact-us textarea {
+  width: 97%;
+  padding: 0.75rem;
+  border: 1px solid var(--background-color-60);
+  border-radius: var(--border-radius-s);
+  font-size: var(--font-size-s);
+}
+
+#contact-us button {
+  display: inline-block;
+  background: var(--primary-color-100);
+  color: var(--white);
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: var(--border-radius-s);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  transition: 0.3s ease;
+}
+
+#contact-us button:hover {
+  background: var(--logo-color-100);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  font-weight: var(--font-weight-semibold);
+}

@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const headerTarget = document.getElementById('header-placeholder');
   let headerFilePath = 'fragments/header.html';
+  isIndex = window.location.pathname.includes("index");
   if(!isIndex) headerFilePath = '../fragments/header.html';
 
   if (headerTarget) {

@@ -87,10 +87,10 @@ header {
     background: none;
 } 
 
-.nav-link.active {
+.navbar-links .active {
   border-bottom: 2px solid var(--highlight-color); /* Or any style you want */
   font-weight: bold;
-  color: var(--text-color); /* Customize this */
+  color: var(--text-color-white-100); /* Customize this */
 }
 
 .header-content {
@@ -114,6 +114,7 @@ header {
     backdrop-filter: blur(3px);
     transition: all 0.3s ease;
     border-radius: var(--border-radius-s);
+    margin-right: 2rem;
 }
 
 .logo-link img {
@@ -126,8 +127,6 @@ header {
 
 .logo-link:hover {
     transform: scale(1.05);
-    border: 2px solid var(--primary-color-60); /* Border color on hover */
-    background-color: var(--replacement-background-color-20); /* Background color on hover */
 }
 
 /* Search bar styles */
@@ -178,6 +177,29 @@ header {
   display: none;
 }
  
+.login-btn {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-s);
+  text-decoration: none;
+  padding: 8px 16px;
+  color: var(--logo-color-100);
+  background-color: var(--primary-color-80);
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-l);
+  display: inline-block;
+  backdrop-filter: blur(3px);
+  transition: all 0.3s ease;
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-left: 8rem;
+  margin-right: 3rem;
+}
+
+.login-btn:hover {
+  background-color: var(--replacement-background-color-20);
+  color: var(--primary-color-100);
+  border: 2px solid var(--primary-color-60);
+  transform: scale(1.05);
+}
 
 /* Navigation links */
 header nav a {
@@ -185,7 +207,8 @@ header nav a {
     font-size: var(--font-size-s);
     text-decoration: none;
     padding: 12px 24px; /* Added horizontal spacing for better button shape */
-    color: var(--primary-color-100);
+    color: var(--logo-color-100);
+    background-color: var(--primary-color-80);
     border: 2px solid transparent; /* Default border */
     border-radius: var(--border-radius-l);
     display: inline-block; /* Ensures transform and padding work as expected */
@@ -200,4 +223,17 @@ header nav a:hover {
     color: var(--primary-color-100);
     border: 2px solid var(--primary-color-60); /* Border color on hover */
     transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.navbar-links a {
+    transform: scale(1);
+    transition: transform 0.2s ease;
+}
+
+.navbar-links a.active-page {
+    transform: scale(1.05);
+    background-color: var(--text-color-white-80);
+    /* Optional: Add more visual changes */
+    color: var(--alt-background-color-100);
+    border: 2px solid var(--logo-color-100);
 }
