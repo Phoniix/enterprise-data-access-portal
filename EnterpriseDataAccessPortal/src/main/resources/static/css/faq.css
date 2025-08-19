@@ -7,12 +7,16 @@
   box-shadow: 0 0 25px rgba(0, 255, 255, 0.05);
 }
 
-.faq-section h1 {
+#faq .title {
   text-align: center;
   font-size: 2.8rem;
+  margin-top: 4rem;
   margin-bottom: 50px;
-  color: #ffffff;
-  text-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+  color: var(--logo-color-100);
+}
+
+#faq .title span {
+  color: var(--primary-color-100);
 }
 
 .faq-item {
@@ -27,12 +31,12 @@
 
 .faq-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.08);
 }
 
 .faq-question {
   font-size: 1.4rem;
-  color: #00ffff;
+  color: var(--logo-color-100);
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -40,7 +44,7 @@
 }
 
 .faq-answer {
-  color: #ccc;
+  color: var(--text-color-white-100);
   font-size: 1rem;
   line-height: 1.6;
 }
