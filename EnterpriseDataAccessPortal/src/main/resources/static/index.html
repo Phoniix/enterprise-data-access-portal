@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="css/about-us.css" />
     <!-- FAQ Stylesheet Ref -->
     <link rel="stylesheet" href="css/faq.css" />
+    <!-- Contactus Stylesheet Ref -->
+     <link rel="stylesheet" href="css/contact-us.css">
     <!-- Footer Stylesheet Ref -->
     <link rel="stylesheet" href="css/footer.css" />
     <body>
@@ -48,7 +50,7 @@
           </div>
           <div class="home-content">
             <!-- Home Welcome Panel-->
-            
+
             <div id="panel-welcome">
               <div class="image-holder">
                 <img
@@ -76,7 +78,7 @@
             </div>
 
             <!-- Home Panel 2 -->
-            
+
             <div class="panel-2">
               <div class="image-holder">
                 <img
@@ -197,7 +199,67 @@
         </section>
 
         <!-- Contact Us Section -->
-        <section class="contact-us"></section>
+        <section id="contact"class="spa-section">
+          <div class="top-contact">
+            <div>(866) 963‑9353 • Promo: 234098</div>
+            <div>
+              New Customer Hours: Mon–Fri 9 am–5 pm<br />
+              Customer Care Hours: Mon–Fri 9 am–5 pm
+            </div>
+          </div>
+          <h2>Send us a message</h2>
+          <form action="#" method="post">
+            <div class="field-group">
+              <label
+                >Existing Payless Power Customer?*<br />
+                <label
+                  ><input type="radio" name="existing" value="yes" required />
+                  Yes</label
+                >
+                <label
+                  ><input type="radio" name="existing" value="no" /> No</label
+                >
+              </label>
+            </div>
+            <div class="field-group">
+              <label
+                >Subject<br />
+                <select name="subject">
+                  <option>General</option>
+                  <option>End Service</option>
+                </select>
+              </label>
+            </div>
+            <div class="field-group">
+              <label
+                >First Name*<input type="text" name="firstName" required
+              /></label>
+            </div>
+           
+            <div class="field-group">
+              <label>Email*<input type="email" name="email" required /></label>
+            </div>
+            <div class="field-group">
+              <label
+                >Account Number<input type="text" name="accountNumber"
+              /></label>
+            </div>
+            <div class="field-group">
+              <label>Phone Number<input type="tel" name="phone" /></label>
+            </div>
+            <div class="field-group">
+              <label>Date of Birth<input type="date" name="dob" /></label>
+            </div>
+            <div class="field-group">
+              <label>PIN<input type="text" name="pin" /></label>
+            </div>
+            <div class="field-group">
+              <label>Message<textarea name="message"></textarea></label>
+            </div>
+            <div class="captcha">[CAPTCHA widget]</div>
+            <button type="submit">Submit</button>
+          </form>
+        </section>
       </main>
       <!-- End Content Section ------------------------------------------------------------------------------------------------->
 
