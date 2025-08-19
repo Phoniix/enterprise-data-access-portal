@@ -1,8 +1,13 @@
+footer {
+    margin-top: 130px;
+}
 .footer-content {
-  background-color: #111;
+  background-color: var(--subtext-color-gray-40);
   color: white;
   padding: 40px 20px;
   font-family: Arial, sans-serif;
+  border-radius: var(--border-radius-m);
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .footer-container {
@@ -59,4 +64,3 @@
   border-top: 1px solid #444;
   padding-top: 10px;
 }
-/*hi*/

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="../css/global_styles.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/login-page.css" />
+  <script src="https://kit.fontawesome.com/e86c5767fd.js" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+  <header>
+    <div id="header-placeholder"></div>
+  </header>
+  <section>
+  <div class="container">
+    <img src="images/MAXX-Energy-Logo-1B.png" alt="Company Logo" class="logo" />
+    <input type="email" id="email" placeholder="Email or Username" class="input-field" />
+    <input type="password" id="password" placeholder="Password" class="input-field" />
+    <button onclick="login()" class="login-button">Login</button>
+    <a href="forgot.html" class="forgot-password">Forgot Password?</a>
+  </div>
+  </section>
+
+  <footer>
+    <div id="footer-placeholder"></div>
+  </footer>
+  <script src="app.js"></script>
+  <script src="../js/header-scripts.js"></script>
+  <script src="../js/footer-scripts.js"></script>
+</body>
+</html>
