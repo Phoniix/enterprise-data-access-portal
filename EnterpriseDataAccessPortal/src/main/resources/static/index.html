@@ -20,7 +20,7 @@
     <!-- FAQ Stylesheet Ref -->
     <link rel="stylesheet" href="css/faq.css" />
     <!-- Contact Us Stylesheet Ref -->
-     <link rel="stylesheet" href="css/contact-us.css">
+    <link rel="stylesheet" href="css/contact-us.css" />
     <!-- Footer Stylesheet Ref -->
     <link rel="stylesheet" href="css/footer.css" />
     <body>
@@ -68,12 +68,6 @@
                   necessitatibus autem molestias praesentium neque fugiat vero
                   molestiae? Voluptate, distinctio.
                 </p>
-                <div class="auth-links">
-                  <a href="index.html#home" class="sign-in">Login</a>
-                  <a href="index.html#home" class="register"
-                    >Don't have an account yet? Sign up!</a
-                  >
-                </div>
               </div>
             </div>
 
@@ -150,7 +144,8 @@
 
         <section id="faq" class="spa-section">
           <h1 class="title">
-            <span><i class="fas fa-question-circle"></i></span> Frequently Asked Questions
+            <span><i class="fas fa-question-circle"></i></span> Frequently Asked
+            Questions
           </h1>
 
           <div class="faq-item">
@@ -206,17 +201,18 @@
           <form id="contact-form" action="#" method="POST">
             <div class="form-group">
               <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" required />
+              <input placeholder="Ex: John Doe" type="text" id="name" name="name" required />
             </div>
 
             <div class="form-group">
               <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" required />
+              <input placeholder="Ex: John.Doe@email.com" type="email" id="email" name="email" required />
             </div>
 
             <div class="form-group">
               <label for="message">Message</label>
               <textarea
+              placeholder="Start typing your message here..."
                 id="message"
                 name="message"
                 rows="5"
@@ -237,10 +233,14 @@
       <script src="js/global_scripts.js"></script>
       <!-- Global Scripts Ref -->
       <script src="js/header-searchBar.js"></script>
-      <!-- Dynamic Header Scripts Ref-->
+      <!-- Dynamic Header Scripts Ref -->
       <script src="js/header-scripts.js"></script>
       <!-- Search Results Redirect Scripts -->
       <script src="js/search-redirect.js"></script>
+      <!-- EmailJS SDK Scripts -->
+      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+      <!-- Contact Scripts -->
+      <script src="js/contact-scripts.js"></script>
       <!-- Dynamic Footer Scripts Ref -->
       <script src="js/footer-scripts.js"></script>
     </body>

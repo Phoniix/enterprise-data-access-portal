@@ -87,10 +87,10 @@ header {
     background: none;
 } 
 
-.nav-link.active {
+.navbar-links .active {
   border-bottom: 2px solid var(--highlight-color); /* Or any style you want */
   font-weight: bold;
-  color: var(--text-color); /* Customize this */
+  color: var(--text-color-white-100); /* Customize this */
 }
 
 .header-content {
@@ -223,4 +223,17 @@ header nav a:hover {
     color: var(--primary-color-100);
     border: 2px solid var(--primary-color-60); /* Border color on hover */
     transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.navbar-links a {
+    transform: scale(1);
+    transition: transform 0.2s ease;
+}
+
+.navbar-links a.active-page {
+    transform: scale(1.05);
+    background-color: var(--text-color-white-80);
+    /* Optional: Add more visual changes */
+    color: var(--alt-background-color-100);
+    border: 2px solid var(--logo-color-100);
 }
