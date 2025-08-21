@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const query = document.getElementById('search-input').value.trim();
             if (query) {
-              window.location.href = `pages/searchResults.html?q=${encodeURIComponent(query)}`;
+              window.location.href = `/src/main/resources/static/pages/searchResults.html?q=${encodeURIComponent(query)}`;
             }
           });
         }

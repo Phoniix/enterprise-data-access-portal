@@ -1,108 +1,198 @@
 
+/* ================================
+   Layout Structure
+================================ */
 .about-content {
-    border-radius: 30px;
-    box-shadow: 0 8px 32px rgba(45,45,45,0.4);
-    padding: 56px 40px;
-    margin: 48px auto;
-    max-width: 960px;
-    color: #fff8f0;
-    font-family: 'Josefin Sans', 'Noto Sans TC', 'Rubik', sans-serif;
-    letter-spacing: 0.02em;
-    border: 2px solid var(--primary-color-100)
+  display: flex;
+  gap: 20px;
+  padding: 20px;
 }
 
-.about-content .container {
-    background: rgba(59, 45, 27, 0.7);
-    border-radius: 15px;
-    box-shadow: 0 2px 12px rgba(45,45,45,0.2);
-    padding: 40px 28px;
+/* Left + Right panels (vertical) */
+.about-left-side-panel,
+.about-right-side-panel {
+  flex: 0 0 200px; /* fixed width side panels */
+  min-height: 100%; /* stretch vertically */
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.about-content h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--primary-color-100);
-    margin-top: 0;
-    margin-bottom: 18px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    position: relative;
-    padding-bottom: 12px;
+/* Middle column holding stacked containers */
+.about-main {
+  flex: 1; /* take remaining space */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* vertical spacing between containers */
 }
 
-.about-content h2::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 3px;
-    width: 60px;
-    background: #FBB019;
-    border-radius: 4px;
+.about-main > div {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.about-content p {
-    font-size: 1.08rem;
-    color: #FADEA4;
-    margin-bottom: 24px;
-    line-height: 1.75;
-    text-shadow: 0 1px 6px rgba(45,45,45,0.2);
-    letter-spacing: 0.015em;
+/* =======================================
+   H2 Title Span Hover
+======================================= */
+#about h2 {
+  color: var(--primary-color-100);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+/* Hide span initially */
+#about h2 span {
+  padding: 7px;
+  border-radius: var(--border-radius-s);
+  background-color: var(--alt-background-color-40);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  color: var(--logo-color-100);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: inline-block; /* needed for transform to work */
+  transform: translateY(10px); /* optional: slight move up on hover */
 }
 
-.about-content ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 24px 0;
+/* Show span on hover of parent containers */
+#about .about-container-1:hover h2 span,
+#about .about-container-2:hover h2 span,
+#about .about-container-3:hover h2 span,
+#about .about-left-side-panel:hover h2 span,
+#about .about-right-side-panel:hover h2 span {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.about-content li {
-    background: linear-gradient(90deg, rgba(250,221,164,0.4) 60%, rgba(92,169,122,0.2) 100%);
-    color: #2D2D2D;
-    font-size: 1.08rem;
-    border-radius: 8px;
-    margin-bottom: 12px;
-    padding: 16px 22px;
-    box-shadow: 0 1px 8px rgba(45,45,45,0.2);
-    font-weight: 500;
-    border-left: 4px solid #FBB019;
-    letter-spacing: 0.015em;
+/* ================================
+   Company Name Styling
+================================ */
+/* Base (neutral, bold but no color) */
+#about .about-company {
+  color: inherit;         /* matches paragraph text color */
+  font-weight: 600;
+  border-radius: var(--border-radius-s);
+  padding: 3px;
+  transition: all 0.3s ease;
 }
 
-.about-content li strong {
-    color: #496DA7;
-    font-weight: 700;
-    letter-spacing: 0.04em;
+#about .about-company .about-maxx {
+  color: inherit;
+  font-weight: 700;
+  transition: all 0.3s ease;
 }
 
-/* --- Responsive --- */
-@media (max-width: 1024px) {
-    .video-content, .bg-video {
-        height: 38vh;
-        min-height: 220px;
-    }
-    .hero-overlay {
-        padding: 24px 8px;
-        max-width: 98vw;
-    }
-    .hero-overlay h1 {
-        font-size: 2rem;
-    }
-    .hero-overlay p {
-        font-size: 1.12rem;
-    }
-    .about-content {
-        padding: 24px 8px;
-        margin: 20px 0;
-        max-width: 98vw;
-    }
-    .about-content .container {
-        padding: 16px 6px;
-    }
-    .about-content h2 {
-        font-size: 1.5rem;
-    }
-    .about-content p, .about-content li {
-        font-size: 1rem;
-    }
+/* Hover state for company name */
+#about .about-container-1:hover .about-company,
+#about .about-container-2:hover .about-company,
+#about .about-left-side-panel:hover .about-company,
+#about .about-right-side-panel:hover .about-company {
+  color: var(--primary-color-100);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  
 }
+
+#about .about-container-1:hover .about-maxx,
+#about .about-container-2:hover .about-maxx,
+#about .about-left-side-panel:hover .about-maxx,
+#about .about-right-side-panel:hover .about-maxx {
+  color: var(--logo-color-100);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ================================
+   Image + Overlay Setup
+================================ */
+/* Apply to all panel images */
+.about-content img {
+  width: 100%;
+  height: 100%;
+  filter: blur(2px);
+  object-fit: cover;   /* keeps aspect ratio while filling space */
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;          /* lowest layer */
+}
+
+/* Container positioning */
+.about-left-side-panel,
+.about-container-1,
+.about-container-2,
+.about-container-3,
+.about-right-side-panel {
+  position: relative;
+  overflow: hidden;    /* prevents img from spilling out */
+}
+
+/* Overlay layer */
+.about-left-side-panel::before,
+.about-container-1::before,
+.about-container-2::before,
+.about-container-3::before,
+.about-right-side-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--text-color-white-80); /* overlay color */
+  z-index: 2; /* sits above image, below text */
+}
+
+/* ================================
+   Text Above Overlay
+================================ */
+.about-left-side-panel h2,
+.about-left-side-panel p,
+.about-container-1 h2,
+.about-container-1 p,
+.about-container-2 h2,
+.about-container-2 p,
+.about-container-3 h2,
+.about-container-3 ul,
+.about-right-side-panel h2,   /* ADD THIS */
+.about-right-side-panel p {   /* ADD THIS */
+  position: relative;
+  z-index: 3; /* top layer */
+}
+
+/* ================================
+   Right Side Panel - Centered Content
+================================ */
+.about-right-side-panel {
+  display: flex;
+  flex-direction: column; /* stack children vertically */
+  align-items: center;    /* horizontal center */
+  text-align: center;     /* center text inside elements */
+  justify-content: flex-start; /* optional: push content to top */
+  padding: 20px;
+}
+
+/* ================================
+   Contact Us Button
+================================ */
+.contact-us-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: var(--primary-color-100);
+  color: var(--text-color-white-100);
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  z-index: 2;
+}
+
+.contact-us-btn:hover {
+  background-color: var(--logo-color-100);
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+

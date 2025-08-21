@@ -94,7 +94,7 @@
     /* Site Size Variables */
     --site-min-width: 1024px;
     --site-max-width: 1600px;
-    --header-height: 50px;
+    --header-height: 75px;
     --site-sides-margin: 30px;
 }
 /* :root contains variables that will be used throughout the entire projects css, if needs to be changed, consider this heavily. 

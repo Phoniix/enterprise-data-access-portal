@@ -1,54 +1,70 @@
-.faq-section {
-  max-width: 1000px;
-  margin: 80px auto;
-  padding: 40px 20px;
-  background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
-  border-radius: 20px;
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.05);
+
+/* FAQ Section */
+#faq {
+  max-width: var(--max-site-width, 900px);
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-#faq .title {
+/* Header */
+#faq h2 {
   text-align: center;
-  font-size: 2.8rem;
-  margin-top: 4rem;
-  margin-bottom: 50px;
-  color: var(--logo-color-100);
-}
-
-#faq .title span {
+  font-size: var(--font-size-xl);
   color: var(--primary-color-100);
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-.faq-item {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 25px 30px;
-  margin-bottom: 25px;
-  transition: all 0.3s ease;
+/* Search */
+.faq-search {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.faq-search input {
+  width: 80%;
+  max-width: 500px;
+  padding: 10px;
+  border: 1px solid var(--secondary-color, #ccc);
+  border-radius: var(--border-radius-md, 6px);
+  font-size: var(--font-size-base, 1rem);
 }
 
-.faq-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.08);
+/* Filters */
+.faq-filters {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.faq-filters .filter-btn {
+  margin: 0 0.3rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--secondary-color, #ccc);
+  background: var(--background-color, #f9f9f9);
+  border-radius: var(--border-radius-sm, 4px);
+  cursor: pointer;
+}
+.faq-filters .filter-btn:hover {
+  background: var(--highlight-color, #eee);
 }
 
+/* Posts */
+.faq-post {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--secondary-color, #ddd);
+  border-radius: var(--border-radius-md, 6px);
+  background: var(--background-color, #fff);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
 .faq-question {
-  font-size: 1.4rem;
-  color: var(--logo-color-100);
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
-
+.faq-meta {
+  font-size: 0.85rem;
+  color: var(--subtext-color, #666);
+  margin-bottom: 1rem;
+}
 .faq-answer {
-  color: var(--text-color-white-100);
   font-size: 1rem;
   line-height: 1.6;
-}
-
-.faq-section i {
-  color: #00ffff;
 }
