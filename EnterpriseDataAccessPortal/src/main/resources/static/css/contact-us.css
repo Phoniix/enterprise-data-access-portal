@@ -51,3 +51,24 @@
 .form-group textarea::placeholder {
   font-weight: var(--font-weight-semibold);
 }
+/* ===== Page-specific: Contact ===== */
+#contact-us{ padding-top: clamp(2rem, 5vw, 3rem); }
+#contact-us h2{ font-size: clamp(1.25rem, 4vw, 1.75rem); margin-bottom:.5rem; }
+#contact-us p{ margin:0 0 1rem; }
+#contact-form{
+  display:grid; gap:1rem; max-width:680px;
+}
+.form-group{ display:grid; gap:.375rem; }
+.form-group label{ font-weight:600; font-size:.95rem; }
+.form-group input, .form-group textarea{
+  width:100%; padding:.9rem 1rem; min-height:44px;
+  border-radius:10px; border:1px solid rgba(0,0,0,.15);
+  background:#fff; color:#111; font:inherit;
+}
+.form-group textarea{ resize:vertical; }
+.btn-primary{
+  justify-self:start; padding:.9rem 1.2rem;
+  border-radius:999px; border:1px solid var(--secondary-color-100, #2D2D2D);
+  background: var(--secondary-color-100, #2D2D2D);
+  color:#fff; font-weight:600;
+}

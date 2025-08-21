@@ -189,36 +189,23 @@
   color: var(--accent-color, #a00);
 }
 
-/* ------------------------- Responsive ------------------------ */
-
-/* Comented out for inital testing. do not delte 
-@media (max-width: 768px) {
-  #panel-welcome,
-  .panel-2 {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  #home > h1,
-  .panel-title {
-    text-align: center;
-  }
-
-  .auth-links {
-    align-items: center;
-  }
-
-  .image-holder img {
-    max-width: 100%;
-  }
-
-  .text-panel {
-    align-items: center;
-  }
-
-  .desc {
-    text-align: center;
-  }
+/* ===== Page-specific: Home content panels ===== */
+.home-content{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1rem, 3vw, 2rem);
+  padding-top: clamp(1.5rem, 4vw, 3rem);
 }
-
-*/
+.home-content #panel-welcome,
+.home-content .panel-2{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem; align-items: start;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: var(--border-radius-m, 16px);
+  padding: clamp(1rem, 3vw, 1.5rem);
+  backdrop-filter: blur(6px);
+}
+.image-holder img{ width:100%; height:auto; display:block; border-radius:12px; }
+.text-panel .desc, .home-content .desc{ margin:0; line-height:1.7; }

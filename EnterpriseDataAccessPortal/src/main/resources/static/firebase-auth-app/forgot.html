@@ -2,97 +2,112 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Forgot Password</title>
+
+  <!-- CSS load order: globals → header/footer → page-specific -->
+  <link rel="stylesheet" href="../css/global_styles.css">
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/forgot.css">
+
+  <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background: url("images/background-login.jpg") no-repeat center center fixed;
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Albert Sans', sans-serif;
-    }
-
-    .glass-box {
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 20px;
-      backdrop-filter: blur(15px);
-      -webkit-backdrop-filter: blur(15px);
-      padding: 40px 30px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .logo {
-      width: 200px;
-      margin-bottom: 30px;
-    }
-
-    .bubble-input {
-      width: 300px;
-      height: 55px;
-      padding: 0 20px;
-      font-size: 20px;
-      font-family: 'Albert Sans', sans-serif;
-      font-weight: 700;
-      border: 2px solid #0073b7; /* blue outline */
-      border-radius: 30px;
-      background: white;
-      color: black;
-      outline: none;
-      margin-bottom: 20px;
-    }
-
-    .bubble-input::placeholder {
-      color: rgba(0, 0, 0, 0.4);
-    }
-
-    .login-button {
-      width: 160px;
-      height: 50px;
-      background: #C3C3C3;
-      border-radius: 40px;
-      font-size: 18px;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-      opacity: 0.8;
-      margin-bottom: 15px;
-    }
-
-    .back-link {
-      color: #0073b7; /* darker blue */
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
+   <script src="https://kit.fontawesome.com/e86c5767fd.js" crossorigin="anonymous"></script>
 </head>
-<body>
-  <div class="glass-box">
-    <img src="images/MAXX-Energy-Logo-1B.png" alt="Company Logo" class="logo" />
 
-    <input
-      type="email"
-      id="email"
-      placeholder="Enter your email"
-      class="bubble-input"
-    />
+<body class="forgot">
+  <!-- Header (use your existing header markup/styles) -->
+  <header class="nav-background">
+    <div class="header-content">
+      <a href="/static/index.html#home" class="logo-link">
+        <img src="/static/images/header/MAXX-Energy-Logo-1B.png" alt="MAXX-Energy-Logo" class="logo" />
+      </a>
+      <nav class="navbar-links">
+        <a href="/static/index.html#home">Home</a>
+        <a href="/static/index.html#about">About Us</a>
+        <a href="/static/index.html#faq">FAQ</a>
+        <a href="/static/index.html#contact-us">Contact Us</a>
+      </nav>
+      <form id="search-form" class="header-search">
+        <input type="text" id="search-input" name="query" />
+        <label for="search-input" class="search-placeholder">
+          <span class="icon">⌕</span> <span class="text">Search</span>
+        </label>
+      </form>
+      <a href="/static/firebase-auth-app/login.html" class="login-btn">Login</a>
+    </div>
+  </header>
 
-    <button onclick="resetPassword()" class="login-button">Send Reset Link</button>
+  <!-- Main auth area -->
+  <main class="auth-main">
+    <form class="auth-card" onsubmit="event.preventDefault(); resetPassword();">
+      <h2>Forgot Password</h2>
+      <p class="hint">Enter your email and we’ll send you a reset link.</p>
 
-    <a href="login.html" class="back-link">← Back to Login</a>
-  </div>
+      <div class="form-row">
+        <input type="email" id="email" placeholder="Enter your email" class="input" required />
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" type="submit">Send Reset Link</button>
+        <a href="login.html" class="link">← Back to Login</a>
+      </div>
+
+      <div id="msg" class="msg" hidden></div>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-content">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>MAXX-Energy</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/static/index.html#home">Home</a></li>
+          <li><a href="/static/index.html#about">About Us</a></li>
+          <li><a href="/static/index.html#faq">FAQ</a></li>
+          <li><a href="/static/index.html#contactUs">Contact Us</a></li>
+          <li><a href="/static/firebase-auth-app/login.html">Login</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="/static/index.html#faq">FAQ</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/maxxpotentialtech/?hl=en"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/MaxxTechnology"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.facebook.com/maxxpotentialllc/"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.linkedin.com/company/maxx-potential/"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="language-selector">
+      <label for="lang">Language:</label>
+      <select id="lang">
+        <option>English</option>
+        <option>Français</option>
+        <option>Español</option>
+      </select>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 MAXX-Energy. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script>
     const firebaseConfig = {
@@ -104,25 +119,19 @@
       appId: "1:684737269225:web:c9b4cb838d5cabf5884f78",
       measurementId: "G-KTLQDZDZD3"
     };
-
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
 
     function resetPassword() {
       const email = document.getElementById("email").value;
-
+      const msgBox = document.getElementById("msg");
       if (!email) {
-        alert("Please enter your email.");
-        return;
+        msgBox.textContent = "⚠️ Please enter your email.";
+        msgBox.className = "msg error"; msgBox.hidden = false; return;
       }
-
       auth.sendPasswordResetEmail(email)
-        .then(() => {
-          alert("Password reset email sent!");
-        })
-        .catch((error) => {
-          alert("Error: " + error.message);
-        });
+        .then(() => { msgBox.textContent = "✅ Password reset email sent!"; msgBox.className = "msg success"; msgBox.hidden = false; })
+        .catch((err) => { msgBox.textContent = "❌ " + err.message; msgBox.className = "msg error"; msgBox.hidden = false; });
     }
   </script>
 </body>

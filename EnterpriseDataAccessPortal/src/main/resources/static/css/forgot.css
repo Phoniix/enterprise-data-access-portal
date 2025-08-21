@@ -1,0 +1,151 @@
+/* =====================
+   Forgot Password Page
+   ===================== */
+
+/* Main layout */
+body.forgot {
+  background: linear-gradient(to bottom right, #b78e8e, #3b4d59); /* same as login */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.auth-main {
+  flex: 1; /* push footer down */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  box-sizing: border-box;
+}
+
+/* Auth card (bigger + same vibe as login) */
+.auth-card {
+  flex: 0 1 520px;              
+  width: 100%;
+  max-width: 520px;
+  padding: 2rem 2.5rem;
+  background: var(--text-color-white-40); /* warm off-white, translucent */
+  border: 1px solid rgba(234, 223, 205, 0.85);
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+  backdrop-filter: blur(6px);
+}
+
+.auth-card h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.auth-card .hint {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.auth-card .form-row {
+  margin-bottom: 1rem;
+}
+
+.auth-card .input {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1rem;
+  border: 2px solid #f0c169; /* gold accent like login */
+  border-radius: 10px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.auth-card .input:focus {
+  border-color: #e2ab3a;
+  box-shadow: 0 0 0 4px rgba(226, 171, 58, 0.18);
+  outline: none;
+}
+
+.auth-card .actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.auth-card .btn-primary {
+  background: #446CB3; /* same blue as login */
+  border: none;
+  color: #fff;
+  padding: 0.9rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 8px 18px rgba(68, 108, 179, 0.25);
+  transition: background 0.2s, transform 0.1s;
+}
+
+.auth-card .btn-primary:hover {
+  background: #365899;
+}
+
+.auth-card .btn-primary:active {
+  transform: translateY(1px);
+}
+
+.auth-card .link {
+  font-size: 0.9rem;
+  color: #446CB3;
+  text-decoration: none;
+}
+
+.auth-card .link:hover {
+  text-decoration: underline;
+}
+
+/* Messages */
+.msg {
+  margin-top: 1.2rem;
+  padding: 0.9rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.msg.success {
+  background: #e6f9f0;
+  color: #0f7a4d;
+  border: 1px solid #0f7a4d;
+}
+
+.msg.error {
+  background: #fdecea;
+  color: #d93025;
+  border: 1px solid #d93025;
+}
+
+/* Footer: make it smaller and cleaner */
+body.forgot footer.footer-content {
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+body.forgot .footer-container {
+  gap: 1.5rem;
+}
+
+body.forgot .footer-column h3,
+body.forgot .footer-column h4 {
+  font-size: 1rem;
+}
+
+body.forgot .footer-column p,
+body.forgot .footer-column ul li a {
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+body.forgot .footer-bottom {
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  text-align: center;
+}

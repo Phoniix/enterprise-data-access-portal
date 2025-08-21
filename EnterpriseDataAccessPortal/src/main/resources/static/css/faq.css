@@ -52,3 +52,19 @@
 .faq-section i {
   color: #00ffff;
 }
+/* ===== Page-specific: FAQ ===== */
+#faq .title{
+  text-align:center; font-size: clamp(1.5rem, 4.5vw, 2rem); margin-bottom: 1rem;
+}
+.faq-item{
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:12px; padding:1rem;
+  background: rgba(255,255,255,.06);
+  margin-bottom:.75rem;
+}
+.faq-question{
+  display:flex; align-items:center; gap:.5rem;
+  font-size:1.05rem; margin:0 0 .5rem;
+}
+.faq-answer{ margin:0; line-height:1.7; }
+  
