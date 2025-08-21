@@ -29,12 +29,16 @@ document.addEventListener("DOMContentLoaded", function () {
     query
   )}`;
 
+  // Fetch / Catch
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
       resultsDiv.innerHTML = ""; // Clears any previous search results
       if (data.items && data.items.length > 0) {
+
         data.items.forEach((item) => {
+          // Leave this here to show the items we are getting, unless performance tanks
+          console.log(item);
           resultsDiv.innerHTML += 
                     `<div class="search-result">
                         <a href="${item.link}" target="_blank" rel="noopener noreferrer"><h3>${item.title}</h3></a>
@@ -42,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 `;
         });
+
       } else {
         resultsDiv.innerHTML = "<p>No results found.</p>";
       }

@@ -1,253 +1,118 @@
-/* --------------------------------------------------
-   0) Fonts (keep at very top)
--------------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans+TC:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
-/* --------------------------------------------------
-   1) Variables
--------------------------------------------------- */
 :root {
-  /* ---------- Color Variables ---------- */
-  /* --background-color variations */
-  --background-color-100: #cfa3a3;     
-  --background-color-80: rgba(207, 163, 163, 0.8);
-  --background-color-60: rgba(207, 163, 163, 0.6);
-  --background-color-40: rgba(207, 163, 163, 0.4);
-  --background-color-20: rgba(207, 163, 163, 0.2);
+    /* ---------- Color Variables ---------- */
+    /* --background-color variations */
+    --background-color-100: #cfa3a3;     /* Gradient top: soft rose pink */
+    --background-color-80: rgba(207, 163, 163, 0.8);
+    --background-color-60: rgba(207, 163, 163, 0.6);
+    --background-color-40: rgba(207, 163, 163, 0.4);
+    --background-color-20: rgba(207, 163, 163, 0.2);
 
-  /* --alt-background-color variations */
-  --alt-background-color-100: rgba(59, 45, 27, 1);
-  --alt-background-color-80: rgba(59, 45, 27, 0.8);
-  --alt-background-color-60: rgba(59, 45, 27, 0.6);
-  --alt-background-color-40: rgba(59, 45, 27, 0.4);
-  --alt-background-color-20: rgba(59, 45, 27, 0.2);
+    /* --alt-background-color variations */
+    --alt-background-color-100: rgba(59, 45, 27, 1); /* Rich walnut wood */
+    --alt-background-color-80: rgba(59, 45, 27, 0.8);
+    --alt-background-color-60: rgba(59, 45, 27, 0.6);
+    --alt-background-color-40: rgba(59, 45, 27, 0.4);
+    --alt-background-color-20: rgba(59, 45, 27, 0.2);
 
-  /* --replacement-background-color variations */
-  --replacement-background-color-100: #3a494b;
-  --replacement-background-color-80: rgba(58, 73, 75, 0.8);
-  --replacement-background-color-60: rgba(58, 73, 75, 0.6);
-  --replacement-background-color-40: rgba(58, 73, 75, 0.4);
-  --replacement-background-color-20: rgba(58, 73, 75, 0.2);
+    /* --replacement-background-color variations */
+    --replacement-background-color-100: #3a494b; /* Gradient bottom: muted teal gray */
+    --replacement-background-color-80: rgba(58, 73, 75, 0.8);
+    --replacement-background-color-60: rgba(58, 73, 75, 0.6);
+    --replacement-background-color-40: rgba(58, 73, 75, 0.4);
+    --replacement-background-color-20: rgba(58, 73, 75, 0.2);
 
-  /* --primary-color variations */
-  --primary-color-100: #496DA7;
-  --primary-color-80: rgba(73, 109, 167, 0.8);
-  --primary-color-60: rgba(73, 109, 167, 0.6);
-  --primary-color-40: rgba(73, 109, 167, 0.4);
-  --primary-color-20: rgba(73, 109, 167, 0.2);
+    /* --primary-color variations */
+    --primary-color-100: #496DA7;         /* Brand blue */
+    --primary-color-80: rgba(73, 109, 167, 0.8);
+    --primary-color-60: rgba(73, 109, 167, 0.6);
+    --primary-color-40: rgba(73, 109, 167, 0.4);
+    --primary-color-20: rgba(73, 109, 167, 0.2);
 
-  /* --logo-color variations -- */
-  --logo-color-100: #FBB019;
-  --logo-color-80: rgba(251, 176, 25, 0.8);
-  --logo-color-60: rgba(251, 176, 25, 0.6);
-  --logo-color-40: rgba(251, 176, 25, 0.4);
-  --logo-color-20: rgba(251, 176, 25, 0.2);
+    /* --logo-color variations -- */
+    --logo-color-100: #FBB019;   /* Brand yellow */
+    --logo-color-80: rgba(251, 176, 25, 0.8);
+    --logo-color-60: rgba(251, 176, 25, 0.6);
+    --logo-color-40: rgba(251, 176, 25, 0.4);
+    --logo-color-20: rgba(251, 176, 25, 0.2);
 
-  /* --secondary-color variations */
-  --secondary-color-100: #2D2D2D;
-  --secondary-color-80: rgba(45, 45, 45, 0.8);
-  --secondary-color-60: rgba(45, 45, 45, 0.6);
-  --secondary-color-40: rgba(45, 45, 45, 0.4);
-  --secondary-color-20: rgba(45, 45, 45, 0.2);
+    /* --secondary-color variations */
+    --secondary-color-100: #2D2D2D;     /* Brand dark gray */
+    --secondary-color-80: rgba(45, 45, 45, 0.8);
+    --secondary-color-60: rgba(45, 45, 45, 0.6);
+    --secondary-color-40: rgba(45, 45, 45, 0.4);
+    --secondary-color-20: rgba(45, 45, 45, 0.2);
 
-  /* --highlight-color variations */
-  --highlight-color-100: rgba(250, 221, 164, 1);
-  --highlight-color-80: rgba(250, 221, 164, 0.8);
-  --highlight-color-60: rgba(250, 221, 164, 0.6);
-  --highlight-color-40: rgba(250, 221, 164, 0.4);
-  --highlight-color-20: rgba(250, 221, 164, 0.2);
+    /* --highlight-color variations */
+    --highlight-color-100: rgba(250, 221, 164, 1);    /* Toasted corn/beige */
+    --highlight-color-80: rgba(250, 221, 164, 0.8);
+    --highlight-color-60: rgba(250, 221, 164, 0.6);
+    --highlight-color-40: rgba(250, 221, 164, 0.4);
+    --highlight-color-20: rgba(250, 221, 164, 0.2);
 
-  /* --accent-color variations */
-  --accent-color-100: rgba(92, 169, 122, 1);
-  --accent-color-80: rgba(92, 169, 122, 0.8);
-  --accent-color-60: rgba(92, 169, 122, 0.6);
-  --accent-color-40: rgba(92, 169, 122, 0.4);
-  --accent-color-20: rgba(92, 169, 122, 0.2);
+    /* --accent-color variations */
+    --accent-color-100: rgba(92, 169, 122, 1);        /* Herb green / cilantro */
+    --accent-color-80: rgba(92, 169, 122, 0.8);
+    --accent-color-60: rgba(92, 169, 122, 0.6);
+    --accent-color-40: rgba(92, 169, 122, 0.4);
+    --accent-color-20: rgba(92, 169, 122, 0.2);
 
-  /* --text-color-white variations */
-  --text-color-white-100: rgba(255, 248, 240, 1);
-  --text-color-white-80: rgba(255, 248, 240, 0.8);
-  --text-color-white-60: rgba(255, 248, 240, 0.6);
-  --text-color-white-40: rgba(255, 248, 240, 0.4);
-  --text-color-white-20: rgba(255, 248, 240, 0.2);
+    /* --text-color-white variations */
+    --text-color-white-100: rgba(255, 248, 240, 1);   /* Warm white */
+    --text-color-white-80: rgba(255, 248, 240, 0.8);
+    --text-color-white-60: rgba(255, 248, 240, 0.6);
+    --text-color-white-40: rgba(255, 248, 240, 0.4);
+    --text-color-white-20: rgba(255, 248, 240, 0.2);
 
-  /* --subtext-color-gray variations */
-  --subtext-color-gray-100: rgba(168, 154, 135, 1);
-  --subtext-color-gray-80: rgba(168, 154, 135, 0.8);
-  --subtext-color-gray-60: rgba(168, 154, 135, 0.6);
-  --subtext-color-gray-40: rgba(168, 154, 135, 0.4);
-  --subtext-color-gray-20: rgba(168, 154, 135, 0.2);
+    /* --subtext-color-gray variations */
+    --subtext-color-gray-100: rgba(168, 154, 135, 1); /* Earthy light brown */
+    --subtext-color-gray-80: rgba(168, 154, 135, 0.8);
+    --subtext-color-gray-60: rgba(168, 154, 135, 0.6);
+    --subtext-color-gray-40: rgba(168, 154, 135, 0.4);
+    --subtext-color-gray-20: rgba(168, 154, 135, 0.2);
 
-  /* Typography scale */
-  --font-size-s: 0.9rem;
-  --font-size-n: 1rem;
-  --font-size-m: 1.12rem;
-  --font-size-l: 1.5rem;
-  --font-size-xl: 2rem;
-  --font-size-xxl: 2.3rem;
+    /* Font Size */
+    --font-size-s: 0.9rem;
+    --font-size-n: 1rem;
+    --font-size-m: 1.12rem;
+    --font-size-l: 1.5rem;
+    --font-size-xl: 2rem;
+    --font-size-xxl: 2.3rem;
 
-  /* Font weight */
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
+    /*Font Weight */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
 
-  /* Radii */
-  --border-radius-s: 8px; 
-  --border-radius-m: 15px;
-  --border-radius-l: 30px;
-  --border-radius-circle: 50%;
+    /* Border Radius */
+    --border-radius-s: 8px; 
+    --border-radius-m: 15px;
+    --border-radius-l: 30px;
+    --border-radius-circle: 50%;
 
-  /* Layout tokens */
-  --site-min-width: 1024px;
-  --site-max-width: 1600px;
-  --header-height: 50px;
-  --site-sides-margin: 30px;
+    /* Site Size Variables */
+    --site-min-width: 1024px;
+    --site-max-width: 1600px;
+    --header-height: 75px;
+    --site-sides-margin: 30px;
 }
-
-/* --------------------------------------------------
-   2) Base (mobile-first)
--------------------------------------------------- */
-*,
-*::before,
-*::after { box-sizing: border-box; }
+/* :root contains variables that will be used throughout the entire projects css, if needs to be changed, consider this heavily. 
+The variables have been organized for color in incrememts of 20% opacity changes. Font sizes are generalized and can usually
+be added to or modified without significant project damage.*/
 
 html, body {
-  height: 100%;
+    height: 100%;
+    margin: var(--header-height) var(--site-sides-margin);
+    margin-bottom: 500px;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', 'Noto Sans TC', 'Rubik', sans-serif;
+    background: linear-gradient(160deg, var(--background-color-100) 0%, var(--replacement-background-color-100) 100%);
+    background-attachment: fixed;
 }
 
-body{
-  margin: 0;
-  padding: calc(var(--header-height)) var(--site-sides-margin) 0; /* space for sticky header + side breathing room */
-  font-family: 'Josefin Sans', 'Noto Sans TC', 'Rubik', sans-serif;
-  line-height: 1.6;
-  background: linear-gradient(160deg, var(--background-color-100) 0%, var(--replacement-background-color-100) 100%);
-  background-attachment: fixed;
-  color: var(--text-color-white-100);
-  -webkit-text-size-adjust: 100%;
+/* .hidden is used for hiding sections that are still on the same page as the link clicked. Used to avoid rerouting to multiple .html files. */
+.hidden {
+    display: none;
 }
 
-img, video { max-width: 100%; height: auto; display: block; }
-a { color: inherit; text-decoration: none; }
-button { font: inherit; cursor: pointer; }
-.hidden { display: none !important; }
-
-/* Utility container for readable width */
-.container{
-  width: min(100% - 2rem, var(--site-max-width));
-  margin-inline: auto;
-}
-
-/* --------------------------------------------------
-   3) Components (examples — keep or replace with yours)
--------------------------------------------------- */
-
-/* Header */
-.header{
-  position: sticky; top: 0; z-index: 50;
-  background: var(--alt-background-color-100);
-  color: var(--text-color-white-100);
-  border-bottom: 1px solid var(--subtext-color-gray-40);
-}
-.header .inner{
-  display: flex; align-items: center; gap: .75rem;
-  padding: .75rem 0;
-}
-.header .brand{ font-weight: var(--font-weight-bold); }
-
-/* Nav (mobile: hidden, toggled by JS if you add it) */
-.nav{ display: none; }
-.menu-btn{ margin-left: auto; background: transparent; border: 0; padding: .5rem; }
-
-/* Hero */
-.hero{
-  padding: clamp(2rem, 6vw, 5rem) 0;
-  color: var(--text-color-white-100);
-}
-.hero h1{
-  margin: 0 0 .5rem;
-  font-size: clamp(1.5rem, 4.5vw, 2.5rem);
-}
-
-/* Grid/cards */
-.grid{
-  display: grid;
-  grid-template-columns: 1fr;         /* mobile: single column */
-  gap: 1rem;
-  padding: 2rem 0;
-}
-.card{
-  background: rgba(255,255,255,.08);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,.15);
-  border-radius: var(--border-radius-m);
-  padding: 1rem;
-  color: var(--text-color-white-100);
-}
-
-/* Footer */
-.footer{
-  padding: 2rem 0 3rem;
-  color: var(--text-color-white-80);
-}
-
-/* --------------------------------------------------
-   4) Responsive (enhancements for wider screens)
--------------------------------------------------- */
-@media (min-width: 768px){
-  /* Show inline nav, hide burger */
-  .menu-btn{ display: none; }
-  .nav{ display: flex; gap: .5rem; margin-left: auto; }
-
-  /* Grid → 2 columns */
-  .grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-}
-
-@media (min-width: 1024px){
-  /* Grid → 3 columns */
-  .grid{ grid-template-columns: repeat(3, minmax(0,1fr)); }
-}
-/* ===== Page-specific: Home hero (video) ===== */
-#home .video-content{
-  position: relative;
-  min-height: 60vh;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  isolation: isolate;
-}
-#home .bg-video{
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover; z-index: -1;
-}
-#home .hero-overlay{
-  text-align: center;
-  padding: clamp(1rem, 4vw, 2rem);
-  color: var(--text-color-white-100, #fff);
-  background: linear-gradient(to bottom, rgba(0,0,0,.35), rgba(0,0,0,.15));
-  border-radius: var(--border-radius-m, 16px);
-  width: min(100% - 2rem, 900px);
-}
-#home .hero-overlay h1{
-  margin: 0 0 .5rem;
-  font-size: clamp(1.75rem, 5vw, 3rem);
-  letter-spacing: .04em;
-}
-#home .hero-overlay h1 span{ color: var(--logo-color-100, #FBB019); }
-#home .hero-overlay p{
-  margin: 0; font-size: clamp(1rem, 2.5vw, 1.125rem); line-height: 1.6;
-}
-
-
-/* ===== Responsive add-ons (append to your existing MQs) ===== */
-@media (min-width: 768px){
-  .home-content #panel-welcome,
-  .home-content .panel-2{ grid-template-columns: 1fr 1fr; }
-  .home-content .panel-2 .image-holder{ order:2; } /* keep your current flow */
-  #home .video-content{ min-height: 70vh; }
-}
-@media (min-width: 1024px){
-  .home-content{ gap:2rem; }
-  #home .hero-overlay{ width: min(100% - 4rem, 980px); }
-}

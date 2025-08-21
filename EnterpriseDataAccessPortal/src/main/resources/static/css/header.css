@@ -1,168 +1,163 @@
-/* ============================
-   ACCESSIBILITY UTILITIES
-============================ */
-.visually-hidden {
-  position: absolute !important;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0; border: 0;
-  overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%);
-}
-.skip-link {
-  position: fixed; left: 12px; top: -48px;
-  background: var(--primary-color-80);
-  color: var(--logo-color-100);
-  padding: 8px 12px; border-radius: 10px;
-  text-decoration: none; box-shadow: 0 2px 6px rgba(0,0,0,.25);
-  transition: top .2s ease; z-index: 1200;
-}
-.skip-link:focus { top: 12px; }
 
-/* ============================
-   HEADER LAYOUT
-============================ */
 header {
-  position: fixed; inset: 0 0 auto 0;
-  z-index: 1000;
-  display: flex; justify-content: center; align-items: center;
-  padding: 10px 20px;
-  background: linear-gradient(180deg, var(--text-color-white-100), var(--text-color-white-20));
-  backdrop-filter: blur(8px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(180deg, var(--text-color-white-100), var(--text-color-white-20));
+    backdrop-filter: blur(8px);
+} 
+
+.navbar-links .active {
+  border-bottom: 2px solid var(--highlight-color); /* Or any style you want */
+  font-weight: bold;
+  color: var(--text-color-white-100); /* Customize this */
 }
+
 .header-content {
-  position: relative;                 /* drawer anchors here */
-  max-width: 95vw; width: 100%; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 12px;
+    max-width: 95vw;    
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* ============================
-   BRAND
-============================ */
-.logo-link { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: var(--border-radius-s); text-decoration: none; transition: transform .3s; }
-.logo-link:hover { transform: scale(1.01); }
-.logo-link img { height: 60px; width: auto; object-fit: contain; }
+/* Logo styles */
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: var(--font-size-m);
+    transition: all 0.3s ease;
+    border-radius: var(--border-radius-s);
+    margin-right: 2rem;
+}
 
-/* ============================
-   SEARCH
-============================ */
-.header-search { position: relative; margin-left: auto; margin-right: 20px; width: 300px; }
+.logo-link img {
+    height: 60px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.logo-link:hover {
+    transform: scale(1.01);
+}
+
+/* Search bar styles */
+.header-search {
+    display: inline-block;
+    align-items: center;
+    position: relative;
+    margin-left: auto;
+    margin-right: 20px; /* Adds space between search bar and logo */
+    width: 300px; /* Fixed width for search bar */
+}
+
 .header-search input {
-  width: 100%; padding: 12px 10px; font-size: var(--font-size-s);
-  border-radius: var(--border-radius-l); border: 2px solid var(--primary-color-100);
-  background: #fff;
-}
-.search-placeholder {
-  position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
-  display: flex; align-items: center; gap: 6px;
-  color: var(--subtext-color-gray-60); font-weight: var(--font-weight-bold);
-  pointer-events: none; transition: opacity .2s;
-}
-.search-placeholder .icon { font-size: calc(var(--font-size-s) + 1.7rem); transform: scaleX(-1); }
-.header-search input:focus + .search-placeholder { opacity: 0; }
-
-/* ============================
-   LOGIN (PILL)
-============================ */
-.login-btn {
-  font-weight: var(--font-weight-bold); font-size: var(--font-size-s);
-  text-decoration: none; padding: 8px 16px;
-  color: var(--logo-color-100); background: var(--primary-color-80);
-  border: 2px solid transparent; border-radius: var(--border-radius-l);
-  backdrop-filter: blur(3px); transition: all .3s;
-  box-shadow: -2px 2px 5px rgba(0,0,0,.1); margin-left: 2rem;
-}
-.login-btn:hover { background: var(--replacement-background-color-20); color: var(--primary-color-100); border-color: var(--primary-color-60); transform: scale(1.05); }
-
-/* ============================
-   NAV LINKS (DESKTOP PILL STYLE)
-============================ */
-.navbar-links { display: block; }
-.nav-list { display: flex; align-items: center; gap: 1rem; list-style: none; margin: 0; padding: 0; }
-.nav-item a {
-  display: inline-block; padding: 12px 24px; text-decoration: none;
-  font-weight: var(--font-weight-bold); font-size: var(--font-size-s);
-  color: var(--logo-color-100); background: var(--primary-color-80);
-  border: 2px solid transparent; border-radius: var(--border-radius-l);
-  backdrop-filter: blur(3px); transition: all .3s;
-  box-shadow: -2px 2px 5px rgba(0,0,0,.1);
-}
-.nav-item a:hover { background: var(--replacement-background-color-20); color: var(--primary-color-100); border-color: var(--primary-color-60); transform: scale(1.05); }
-.nav-item a.active-page { background: var(--text-color-white-80); color: var(--alt-background-color-100); border-color: var(--logo-color-100); transform: scale(1.05); }
-
-/* Optional underline style if you also use .active */
-.nav-item a.active { border-bottom: 2px solid var(--highlight-color); color: var(--text-color-white-100); }
-
-/* ============================
-   HAMBURGER (3 bars → X)
-============================ */
-.hamburger{
-  display: none;                 /* shown via mobile/scroll rules */
-  align-items: center; justify-content: center;
-  width: 42px; height: 42px; padding: 0;
-  background: var(--primary-color-80); color: var(--logo-color-100);
-  border: 2px solid transparent; border-radius: var(--border-radius-l);
-  box-shadow: -2px 2px 5px rgba(0,0,0,.1); cursor: pointer; z-index: 1002;
-}
-.hamburger span{ display:block; width:18px; height:2px; background: currentColor; border-radius:2px; transition: transform .25s, opacity .2s; }
-.hamburger span + span{ margin-top:5px; }
-.hamburger.active span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
-.hamburger.active span:nth-child(2){ opacity:0; }
-.hamburger.active span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
-
-/* ============================
-   MOBILE DRAWER + BACKDROP
-============================ */
-.nav-backdrop{
-  position: fixed; inset: 0; background: rgba(0,0,0,.35);
-  opacity: 0; pointer-events: none; transition: opacity .3s; z-index: 999;
-}
-.nav-backdrop.show{ opacity: 1; pointer-events: auto; }
-
-/* Mobile: turn nav into an off-canvas panel anchored to header-content */
-@media (max-width: 768px){
-  .hamburger{ display: inline-flex !important; }
-  .header-search{ display: none; }                 /* declutter mobile */
-
-  .navbar-links{
-    position: absolute; top: calc(100% + 8px); right: 12px;
-    width: min(82vw, 320px); padding: 12px;
-    background: rgba(20,20,20,.85); color: #fff;
-    backdrop-filter: blur(10px);
+    padding: 12px 10px;
+    font-size: var(--font-size-s);
+    width: 250px;
     border-radius: var(--border-radius-l);
-    box-shadow: 0 8px 24px rgba(0,0,0,.25);
-    display: none; z-index: 1001;
-  }
-  .navbar-links.open{ display: block !important; }
-
-  .nav-list{ flex-direction: column; align-items: stretch; gap: 8px; }
-  .nav-item a{ margin: 0; display: block; }
+    border: 5px solid var(--primary-color-100);
 }
 
-/* ============================
-   DESKTOP SCROLL COLLAPSE
-============================ */
-@media (min-width: 769px){
-  /* Show burger & hide inline nav after scrolling a bit (optional) */
-  header.scrolled .hamburger{ display: inline-flex; }
-  header.scrolled .navbar-links{ display: none !important; }
+.search-placeholder {
+    font-weight: var(--font-weight-bold);
+    position: absolute;
+    left: 20px;
+    top: 53%;
+    transform: translateY(-50%);
+    color: var(--subtext-color-gray-60);
+    pointer-events: none; /* Allows clicks to pass through */
+    font-size: var(--font-size-s);
+    display: flex;
+    align-items: center;
+    transition: 0.2s;
 }
-.nav-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
+
+.search-placeholder .icon {
+    margin-right: 5px;
+    font-size: calc(var(--font-size-s) + 1.7rem); /* Adjust icon size */
+    transform: scaleX(-1);
+}
+
+.icon {
+    position: relative;
+    top: -3px;
+    left: -10px;
+}
+
+.header-search input:focus + .search-placeholder {
+  display: none;
+}
+ 
+.login-btn {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-s);
+  text-decoration: none;
+  padding: 8px 16px;
+  color: var(--logo-color-100);
+  background-color: var(--primary-color-80);
+  border: 2px solid transparent;
+  border-radius: var(--border-radius-l);
+  display: inline-block;
   backdrop-filter: blur(3px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .3s ease;
-  z-index: 999; /* just under header */
+  transition: all 0.3s ease;
+  box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-left: 8rem;
+  margin-right: 3rem;
 }
-.nav-backdrop.show {
-  opacity: 1;
-  pointer-events: auto;
+
+.login-btn:hover {
+  background-color: var(--replacement-background-color-20);
+  color: var(--primary-color-100);
+  border: 2px solid var(--primary-color-60);
+  transform: scale(1.05);
 }
-/* mobile drawer visible when .open */
-@media (max-width: 768px){
-  .hamburger{ display: inline-flex !important; }
-  .navbar-links{ display: none; /* plus your positioning */ }
-  .navbar-links.open{ display: block !important; }
+
+/* Navigation links */
+header nav a {
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-s);
+    text-decoration: none;
+    padding: 12px 24px; /* Added horizontal spacing for better button shape */
+    color: var(--logo-color-100);
+    background-color: var(--primary-color-80);
+    border: 2px solid transparent; /* Default border */
+    border-radius: var(--border-radius-l);
+    display: inline-block; /* Ensures transform and padding work as expected */
+    transform: scale(1);   /* Better syntax */
+    backdrop-filter: blur(3px);
+    transition: all 0.3s ease;
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+header nav a:hover {
+    background-color: var(--replacement-background-color-20);
+    color: var(--primary-color-100);
+    border: 2px solid var(--primary-color-60); /* Border color on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.navbar-links a {
+    transform: scale(1);
+    transition: transform 0.2s ease;
+}
+
+.navbar-links a.active-page {
+    transform: scale(1.05);
+    background-color: var(--text-color-white-80);
+    /* Optional: Add more visual changes */
+    color: var(--alt-background-color-100);
+    border: 2px solid var(--logo-color-100);
 }

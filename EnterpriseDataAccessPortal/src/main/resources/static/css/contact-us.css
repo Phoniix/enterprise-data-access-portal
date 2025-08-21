@@ -24,6 +24,7 @@
 
 #contact-us input,
 #contact-us textarea {
+  margin-bottom: 10px;
   width: 97%;
   padding: 0.75rem;
   border: 1px solid var(--background-color-60);
@@ -32,11 +33,11 @@
 }
 
 #contact-us button {
+  border: 2px solid var(--logo-color-100);
   display: inline-block;
   background: var(--primary-color-100);
-  color: var(--white);
+  color: var(--logo-color-100);
   padding: 0.75rem 1.25rem;
-  border: none;
   border-radius: var(--border-radius-s);
   cursor: pointer;
   font-size: var(--font-size-base);
@@ -44,31 +45,11 @@
 }
 
 #contact-us button:hover {
+  color: var(--primary-color-100);
   background: var(--logo-color-100);
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   font-weight: var(--font-weight-semibold);
-}
-/* ===== Page-specific: Contact ===== */
-#contact-us{ padding-top: clamp(2rem, 5vw, 3rem); }
-#contact-us h2{ font-size: clamp(1.25rem, 4vw, 1.75rem); margin-bottom:.5rem; }
-#contact-us p{ margin:0 0 1rem; }
-#contact-form{
-  display:grid; gap:1rem; max-width:680px;
-}
-.form-group{ display:grid; gap:.375rem; }
-.form-group label{ font-weight:600; font-size:.95rem; }
-.form-group input, .form-group textarea{
-  width:100%; padding:.9rem 1rem; min-height:44px;
-  border-radius:10px; border:1px solid rgba(0,0,0,.15);
-  background:#fff; color:#111; font:inherit;
-}
-.form-group textarea{ resize:vertical; }
-.btn-primary{
-  justify-self:start; padding:.9rem 1.2rem;
-  border-radius:999px; border:1px solid var(--secondary-color-100, #2D2D2D);
-  background: var(--secondary-color-100, #2D2D2D);
-  color:#fff; font-weight:600;
 }
